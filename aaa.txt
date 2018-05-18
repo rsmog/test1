@@ -1,0 +1,2415 @@
+[DB]
+DBPath=M:\data\P3I\RECETTE\
+
+;
+; Base de données P3IRev
+;
+
+ConnectionString=Provider=SQLOLEDB;Password=P3IPwd;Persist Security Info=True;User ID=P3IUser;Initial Catalog=P3I_Rev;Data Source=DSI-W7364BDDV0\SQLT110_PILO1_RB
+CRWConnectionString=dsn=DSI-W7364BDDV0\SQLT110_PILO1_RB,1433;dsq=P3I_Rev;uid=P3IUser;pwd=P3IPwd
+
+
+;
+; Base de données P3I_Rev_Arch
+;
+
+ConnectionStringArchive=Provider=SQLOLEDB;Password=P3IPwd;Persist Security Info=True;User ID=P3IUser;Initial Catalog=P3I_Rev_Arch;Data Source=DSI-W7364BDDV0\SQLT110_PILO1_RB
+CRWConnectionStringArchive=DSN=DSI-W7364BDDV0\SQLT110_PILO1_RB;UID=P3IUser;PWD=P3IPwd;DSQ=P3I_Rev_Arch
+
+
+;
+; SASP3I ORACLE
+;
+
+;SASP3IConnectionString=Provider=OraOLEDB.Oracle;Data Source=SINREC-TP;User Id=UP3IP3IR0;Password=UP3IP3IR9;
+
+[BULKINSERT]
+;CSVUNCPath=M:\data\P3I\RECETTE\Import\
+CSVUNCPath=\\Gfa-fs1\tran$\data\P3I\RECETTE\Import\
+
+
+[Dir]
+DBPath=M:\data\P3I\RECETTE\
+LogPath=M:\data\P3I\RECETTE\Log\
+LicencesPath=M:\data\LicMoeglin\P3I\
+InputPath=M:\data\P3I\RECETTE\Import\
+ExportPath=M:\data\P3I\RECETTE\Export\
+
+FichierTop=M:\data\P3I\RECETTE\Top\GC01P3IPR9.txt
+
+[Parametre]
+Print_UsePrintDlg=1
+
+[P3I]
+;invalidité viagere
+AgeLimitViagere=120
+LoiInvaliditeViagere=LINVAL_VIAGERE_BCAC
+
+;Parametres Statutaire 
+StatAgeRetraite=62 
+StatAgeMin=20 
+StatAgeMax=64 
+StatMOMaxSemaine=52 
+StatCLMMaxSemaine=156 
+StatCLDMaxSemaine=252 
+StatMATMaxSemaine=23 
+StatATMaxSemaine=366 
+StatAnneeBaremeList=2004,2015 
+StatAnneeBareme=2004
+
+LastGroupe=1
+LastUser=4
+ObjetImport=P3IImportGenerali.iImportGenerali
+ObjetImportRevalo=P3IImportGenerali.iImportGeneraliRevalo
+ObjetImportSASP3I=P3IImportGenerali.iImportGeneraliSASP3I
+ModuleCalcul=P3ICalcul_Generali
+;
+ControleMontantMax=100000
+ControleProvisionMAx=1000000
+ScriptRechercheDoublon=M:\data\P3I\RECETTE\Sql\P3I_Recherche_Doublon_v3.sql
+ScriptSelectionDonnee=M:\data\P3I\RECETTE\Sql\P3I_Selection_Donnees_lot_v1.sql
+;
+; format d'affichage des NCA. ISICA="0 00 000000 00 00"
+FormatNCA=################
+
+DelaiPriseEnCompte=999
+TauxIncapacite=2,5
+FraisGestionIncapacite=3
+TauxInvalidité=2,50
+FraisGestionInvalidite=3
+TauxRevenuC7=2.75
+FraisGestionC7=0
+TauxIndexation=0.94
+DureeIndexation=7
+TMO=4.84
+LISSAGE=7
+LoiIncapacite=LINCAP2011
+LoiPassage=LPASS2011
+LoiInvalidite=LINVAL2011
+RenteConjoint=TV8890
+RenteEducation=TV8890
+AgeRetraite=65
+DureeIncap=36
+FranchiseIncap=0
+TauxTechniqueRenteConjoint=2.75
+FraisGestionRenteConjoint=0
+TauxTechniqueRenteEducation=2.75
+FraisGestionRenteEducation=0
+AnnuelConjoint=0
+SemestrielConjoint=0
+TrimestrielConjoint=1
+MensuelConjoint=0
+PaiementAvanceConjoint=0
+PaiementEchuConjoint=1
+AnnuelEducation=0
+SemestrielEducation=0
+TrimestrielEducation=0
+MensuelEducation=1
+PaiementAvanceEducation=1
+PaiementEchuEducation=0
+FraisGestionCapitauxDecesDC=0
+FraisGestionRenteEducationDC=0
+FraisGestionRenteConjointDC=0
+CapitalMoyenRenteConjointDC=0
+ForcerCapitalMoyenRteConjoitDC=0
+AgeConjointRenteConjointDC=2,5
+LissageProvision=1
+RecalculBCAC=1
+LoiIncapaciteDC=46
+LoiInvaliditeDC=47
+LoiIncapacitePrecalculDC=PMIJ60-2,5%
+LoiInvaliditePrecalculDC=PMInv60-2,5%
+CapitalMoyenRenteConjointTempoDC=1
+CapitalMoyenRenteConjointViagereDC=2
+NbDecimalPM=4
+NbDecimalCalcul=6
+PMGDForcerInval=0
+MethodeCalcul=0
+TauxTechniqueDC=2,5
+FraisGestionDC=0
+AgeLimiteCalulDC=65
+SANSLISSAGE_PASSAGE=0
+BRIDAGE_AGE=1
+
+[INFOSCLIENT]
+NomClient=Generali Vie
+NomSite=Paris
+
+[DefaultParameters_1]
+NumParamCalcul=1
+Nom=FC - Salariés
+Commentaire=Paramètres de calciul pour la Fédération Continentale, Fichier des salariés.
+TauxIncapacite=2.75
+FraisGestionIncapacite=0
+LoiIncapacite=LINCAP1996
+LoiPassage=LPASS1996
+TauxInvalidité=2.75
+FraisGestionInvalidite=0
+LoiInvalidite=LINVAL1996_65
+TauxRevenuC7=2.75
+FraisGestionC7=0
+TauxIndexation=0.94
+DureeIndexation=7
+TMO=4.84
+DureeLissage=7
+TauxTechniqueRenteConjoint=2.75
+FraisGestionRenteConjoint=0
+FractionnementRenteConjoint=4
+PaiementRenteConjoint=1
+TableRenteConjoint=TF0002
+TauxTechniqueRenteEducation=2.75
+FraisGestionRenteEducation=0
+FractionnementRenteEducation=4
+PaiementRenteEducation=1
+TableRenteEducation=TF0002
+FraisGestionCapitauxDecesDC=0
+FraisGestionRenteEducationDC=0
+PourcentageAccident=20
+FraisGestionRenteConjointDC=0
+CapitalMoyenRenteConjointTempoDC=1
+CapitalMoyenRenteConjointViagereDC=2
+ForcerCapitalMoyenRenteConjointDC=0
+AgeConjointRenteConjointDC=2.5
+UtiliserTableLissageProvision=0
+RecalculCoeffBCAC=0
+MethodeCalculDC=1
+LoiIncapaciteDC=MortIncap
+LoiInvaliditeDC=MortInval
+TauxTechniqueDC=2.75
+FraisGestionDC=0
+AgeLimiteCalulDC=60
+LoiIncapacitePrecalculDC=PMIJ60-2,5%
+LoiInvaliditePrecalculDC=PMInv60-2,5%
+CalculAge_Anniversaire=1
+LissageCoeffPassage=0
+BridageAgeLimiteTable=0
+InterpolationInvalidite=1
+[DefaultParameters_2]
+NumParamCalcul=2
+Nom=FC - Emprunteurs
+Commentaire=Paramètres de calciul pour la Fédération Continentale, Fichier des emprunteurs.
+TauxIncapacite=2.75
+FraisGestionIncapacite=0
+LoiIncapacite=LINCAP1996
+LoiPassage=LPASS1996
+TauxInvalidité=2.75
+FraisGestionInvalidite=0
+LoiInvalidite=LINVAL1996_65
+TauxRevenuC7=3.5
+FraisGestionC7=3
+TauxIndexation=0.94
+DureeIndexation=7
+TMO=4.84
+DureeLissage=7
+TauxTechniqueRenteConjoint=3.5
+FraisGestionRenteConjoint=3
+FractionnementRenteConjoint=4
+PaiementRenteConjoint=1
+TableRenteConjoint=TF0002
+TauxTechniqueRenteEducation=3.5
+FraisGestionRenteEducation=3
+FractionnementRenteEducation=4
+PaiementRenteEducation=1
+TableRenteEducation=TF0002
+FraisGestionCapitauxDecesDC=3.5
+FraisGestionRenteEducationDC=3.5
+PourcentageAccident=20
+FraisGestionRenteConjointDC=3.5
+CapitalMoyenRenteConjointTempoDC=1
+CapitalMoyenRenteConjointViagereDC=2
+ForcerCapitalMoyenRenteConjointDC=0
+AgeConjointRenteConjointDC=2.5
+UtiliserTableLissageProvision=0
+RecalculCoeffBCAC=0
+MethodeCalculDC=1
+LoiIncapaciteDC=MortIncap
+LoiInvaliditeDC=MortInval
+TauxTechniqueDC=2.5
+FraisGestionDC=0
+AgeLimiteCalulDC=60
+LoiIncapacitePrecalculDC=PMIJ60-2,5%
+LoiInvaliditePrecalculDC=PMInv60-2,5%
+CalculAge_Anniversaire=1
+LissageCoeffPassage=1
+BridageAgeLimiteTable=0
+InterpolationInvalidite=3
+[DefaultParameters_3]
+NumParamCalcul=3
+Nom=Groupe Mornay
+Commentaire=Paramétrage des calculs pour le Groupe Mornay.
+TauxIncapacite=2.75
+FraisGestionIncapacite=0
+LoiIncapacite=LINCAP1996
+LoiPassage=LPASS1996
+TauxInvalidité=2.75
+FraisGestionInvalidite=0
+LoiInvalidite=LINVAL1996
+TauxRevenuC7=2.75
+FraisGestionC7=0
+TauxIndexation=0.94
+DureeIndexation=7
+TMO=4.84
+DureeLissage=7
+TauxTechniqueRenteConjoint=2.75
+FraisGestionRenteConjoint=0
+FractionnementRenteConjoint=4
+PaiementRenteConjoint=1
+TableRenteConjoint=TF0002
+TauxTechniqueRenteEducation=2.75
+FraisGestionRenteEducation=0
+FractionnementRenteEducation=4
+PaiementRenteEducation=1
+TableRenteEducation=TF0002
+FraisGestionCapitauxDecesDC=0
+FraisGestionRenteEducationDC=0
+PourcentageAccident=20
+FraisGestionRenteConjointDC=0
+CapitalMoyenRenteConjointTempoDC=1
+CapitalMoyenRenteConjointViagereDC=2
+ForcerCapitalMoyenRenteConjointDC=0
+AgeConjointRenteConjointDC=2.5
+UtiliserTableLissageProvision=0
+RecalculCoeffBCAC=0
+MethodeCalculDC=1
+LoiIncapaciteDC=MortIncap
+LoiInvaliditeDC=MortInval
+TauxTechniqueDC=2.75
+FraisGestionDC=0
+AgeLimiteCalulDC=60
+LoiIncapacitePrecalculDC=PMIJ60-2,5%
+LoiInvaliditePrecalculDC=PMInv60-2,5%
+CalculAge_Anniversaire=1
+LissageCoeffPassage=1
+BridageAgeLimiteTable=0
+InterpolationInvalidite=0
+[DefaultParameters_4]
+NumParamCalcul=4
+Nom=Generali - Salariés
+Commentaire=Paramétrage des calculs pour le Generali, Fichier des salariés
+TauxIncapacite=2
+FraisGestionIncapacite=0
+LoiIncapacite=LINCAP1996
+LoiPassage=LPASS1996
+TauxInvalidité=2
+FraisGestionInvalidite=0
+LoiInvalidite=LINVAL1996
+TauxRevenuC7=2
+FraisGestionC7=0
+TauxIndexation=0.94
+DureeIndexation=7
+TMO=4.84
+DureeLissage=7
+TauxTechniqueRenteConjoint=2
+FraisGestionRenteConjoint=0
+FractionnementRenteConjoint=4
+PaiementRenteConjoint=1
+TableRenteConjoint=TF0002
+TauxTechniqueRenteEducation=2
+FraisGestionRenteEducation=0
+FractionnementRenteEducation=4
+PaiementRenteEducation=1
+TableRenteEducation=TF0002
+FraisGestionCapitauxDecesDC=0
+FraisGestionRenteEducationDC=0
+PourcentageAccident=20
+FraisGestionRenteConjointDC=0
+CapitalMoyenRenteConjointTempoDC=1
+CapitalMoyenRenteConjointViagereDC=2
+ForcerCapitalMoyenRenteConjointDC=0
+AgeConjointRenteConjointDC=2.5
+UtiliserTableLissageProvision=0
+RecalculCoeffBCAC=0
+MethodeCalculDC=1
+LoiIncapaciteDC=MortIncap
+LoiInvaliditeDC=MortInval
+TauxTechniqueDC=2
+FraisGestionDC=0
+AgeLimiteCalulDC=60
+LoiIncapacitePrecalculDC=PMIJ60-2,5%
+LoiInvaliditePrecalculDC=PMInv60-2,5%
+CalculAge_Anniversaire=1
+LissageCoeffPassage=0
+BridageAgeLimiteTable=0
+InterpolationInvalidite=0
+[DefaultParameters_5]
+NumParamCalcul=5
+Nom=DEXIA - ITT
+Commentaire=Paramétrage des calculs pour DEXIA, fichier des ITT
+TauxIncapacite=2
+FraisGestionIncapacite=0
+LoiIncapacite=LINCAP1996
+LoiPassage=LPASS1996
+TauxInvalidité=2
+FraisGestionInvalidite=0
+LoiInvalidite=LINVAL1996
+TauxRevenuC7=2
+FraisGestionC7=0
+TauxIndexation=0.94
+DureeIndexation=7
+TMO=4.84
+DureeLissage=7
+TauxTechniqueRenteConjoint=2
+FraisGestionRenteConjoint=0
+FractionnementRenteConjoint=4
+PaiementRenteConjoint=1
+TableRenteConjoint=TF0002
+TauxTechniqueRenteEducation=2
+FraisGestionRenteEducation=0
+FractionnementRenteEducation=4
+PaiementRenteEducation=1
+TableRenteEducation=TF0002
+FraisGestionCapitauxDecesDC=0
+FraisGestionRenteEducationDC=0
+PourcentageAccident=20
+FraisGestionRenteConjointDC=0
+CapitalMoyenRenteConjointTempoDC=1
+CapitalMoyenRenteConjointViagereDC=2
+ForcerCapitalMoyenRenteConjointDC=0
+AgeConjointRenteConjointDC=2.5
+UtiliserTableLissageProvision=0
+RecalculCoeffBCAC=0
+MethodeCalculDC=1
+LoiIncapaciteDC=MortIncap
+LoiInvaliditeDC=MortInval
+TauxTechniqueDC=2
+FraisGestionDC=0
+AgeLimiteCalulDC=60
+LoiIncapacitePrecalculDC=PMIJ60-2,5%
+LoiInvaliditePrecalculDC=PMInv60-2,5%
+CalculAge_Anniversaire=1
+LissageCoeffPassage=0
+BridageAgeLimiteTable=0
+InterpolationInvalidite=1
+[DefaultParameters_6]
+NumParamCalcul=6
+Nom=DEXIA - IPT
+Commentaire=Paramétrage des calculs pour DEXIA, fichier des ITT
+TauxIncapacite=2
+FraisGestionIncapacite=0
+LoiIncapacite=LINCAP1996
+LoiPassage=LPASS1996
+TauxInvalidité=2
+FraisGestionInvalidite=0
+LoiInvalidite=LINVAL1996
+TauxRevenuC7=2
+FraisGestionC7=0
+TauxIndexation=0.94
+DureeIndexation=7
+TMO=4.84
+DureeLissage=7
+TauxTechniqueRenteConjoint=2
+FraisGestionRenteConjoint=0
+FractionnementRenteConjoint=4
+PaiementRenteConjoint=1
+TableRenteConjoint=TF0002
+TauxTechniqueRenteEducation=2
+FraisGestionRenteEducation=0
+FractionnementRenteEducation=4
+PaiementRenteEducation=1
+TableRenteEducation=TF0002
+FraisGestionCapitauxDecesDC=0
+FraisGestionRenteEducationDC=0
+PourcentageAccident=20
+FraisGestionRenteConjointDC=0
+CapitalMoyenRenteConjointTempoDC=1
+CapitalMoyenRenteConjointViagereDC=2
+ForcerCapitalMoyenRenteConjointDC=0
+AgeConjointRenteConjointDC=2.5
+UtiliserTableLissageProvision=0
+RecalculCoeffBCAC=0
+MethodeCalculDC=1
+LoiIncapaciteDC=MortIncap
+LoiInvaliditeDC=MortInval
+TauxTechniqueDC=2
+FraisGestionDC=0
+AgeLimiteCalulDC=60
+LoiIncapacitePrecalculDC=PMIJ60-2,5%
+LoiInvaliditePrecalculDC=PMInv60-2,5%
+CalculAge_Anniversaire=1
+LissageCoeffPassage=1
+BridageAgeLimiteTable=1
+InterpolationInvalidite=0
+[DefaultParameters_7]
+NumParamCalcul=7
+Nom=Generali Assurance
+Commentaire=Paramètres de calcul pour Generali Assurance
+TauxIncapacite=2.75
+FraisGestionIncapacite=0
+LoiIncapacite=LINCAP1996
+LoiPassage=LPASS1996
+TauxInvalidité=2.75
+FraisGestionInvalidite=0
+LoiInvalidite=LINVAL1996
+TauxRevenuC7=2.75
+FraisGestionC7=0
+TauxIndexation=0.94
+DureeIndexation=7
+TMO=4.84
+DureeLissage=7
+TauxTechniqueRenteConjoint=2.75
+FraisGestionRenteConjoint=0
+FractionnementRenteConjoint=4
+PaiementRenteConjoint=1
+TableRenteConjoint=TV8890
+TauxTechniqueRenteEducation=2.75
+FraisGestionRenteEducation=0
+FractionnementRenteEducation=4
+PaiementRenteEducation=1
+TableRenteEducation=TV8890
+FraisGestionCapitauxDecesDC=0
+FraisGestionRenteEducationDC=0
+PourcentageAccident=20
+FraisGestionRenteConjointDC=0
+CapitalMoyenRenteConjointTempoDC=1
+CapitalMoyenRenteConjointViagereDC=2
+ForcerCapitalMoyenRenteConjointDC=0
+AgeConjointRenteConjointDC=2.5
+UtiliserTableLissageProvision=0
+RecalculCoeffBCAC=0
+MethodeCalculDC=1
+LoiIncapaciteDC=MortIncap
+LoiInvaliditeDC=MortInval
+TauxTechniqueDC=2.75
+FraisGestionDC=0
+AgeLimiteCalulDC=60
+LoiIncapacitePrecalculDC=PMIJ60-2,5%
+LoiInvaliditePrecalculDC=PMInv60-2,5%
+CalculAge_Anniversaire=0
+LissageCoeffPassage=1
+BridageAgeLimiteTable=0
+InterpolationInvalidite=0
+;--------------------------------------------------------------------
+; Indique les valeurs à utilisées lors de l'import "Revalo" pour les 
+; champs absent de l'import simplifié
+;
+; mots clés :
+;	NULL 	= vide / non spécifié
+;	<Sinistre>	= remplacé par la date de sinistre issue de l'import
+;	<Survenance>	= remplacé par la date de survenance issue de l'import
+;	<Annualisation>	= remplacé par l'annualisation issue de l'import
+;
+[ImportXLSRevalo]
+Code_CIE=1
+Code_APP=13
+Convention=<Sinistre>
+Contractant=GENERALI
+Sexe=H
+SituConv=NULL
+EffetSitu=NULL
+EffetConv=NULL
+CodeOption=AUTRES
+Etablissement=NULL
+Dossier=<Sinistre>
+DateEntreeInvalidite=<Survenance>
+TypeMvt=NULL
+IndemnitesJournalieres=NULL
+BaseRevalo=0
+MntBase=<Annualisation>
+MntRevalo=0
+MntMajore=0
+MntRegle=0
+TypeRglt=38353
+DebIndemn=<Survenance>
+NbJIndemnises=NULL
+DatePaiement=NULL
+CreationDossier=NULL
+DebDossier=<Survenance>
+FinGarantie=NULL
+FinDossier=NULL
+MotifCloture=NULL
+SalBrut=NULL
+DebRefSal=NULL
+FinRefSal=NULL
+Code_Cat_Contrat=01
+RegrStat=NULL
+RegrAnnexe=40
+FamComptable=40
+Inspecteur=NULL
+Insp=NULL
+Apport=NULL
+Apport2=NULL
+Gestionnaire=NULL
+IndicCC=NULL
+Cause=NULL
+Franchise=NULL
+Compagnie=NULL
+NbIntervenant=NULL
+CDCONTENTIEUX=0
+
+[Filtre_Periode_87]
+Xml=<Filtre_Periode_87><Filtre Société="" Régime="" Catégorie="" Nom="" Contrat="" Police="" Code_GE="" Code_Provision="" Code_Position="" RegroupAnnexe="" RegroupStat="" CCN="" NUENRP3I=""/></Filtre_Periode_87>
+
+
+
+[Filtre_Periode_88]
+Xml=<Filtre_Periode_88><Filtre Société="" Régime="" Catégorie="" Nom="" Contrat="" Police="" Code_GE="" Code_Provision="" Code_Position="" RegroupAnnexe="" RegroupStat="" CCN="" NUENRP3I=""/></Filtre_Periode_88>
+
+
+
+
+
+
+
+
+
+
+
+
+
+[Filtre_Periode_89]
+Xml=<Filtre_Periode_89><Filtre Société="" Régime="" Catégorie="" Nom="" Contrat="" Police="" Code_GE="" Code_Provision="" Code_Position="" RegroupAnnexe="" RegroupStat="" CCN="" NUENRP3I=""/></Filtre_Periode_89>
+
+
+
+
+
+
+
+
+
+
+[Filtre_Periode_91]
+Xml=<Filtre_Periode_91><Filtre Société="" Régime="" Catégorie="" Nom="" Contrat="" Police="" Code_GE="" Code_Provision="" Code_Position="" RegroupAnnexe="" RegroupStat="" CCN="" NUENRP3I=""/></Filtre_Periode_91>
+
+
+
+
+
+
+
+
+
+
+
+[Filtre_Periode_86]
+Xml=<Filtre_Periode_86><Filtre Société="" Régime="" Catégorie="" Nom="" Contrat="" Police="" Code_GE="" Code_Provision="" Code_Position="" RegroupAnnexe="" RegroupStat="" CCN="" NUENRP3I=""/></Filtre_Periode_86>
+
+
+
+
+[Filtre_Periode_189]
+Xml=<Filtre_Periode_189><Filtre Société="" Régime="" Catégorie="" Nom="" Convention="" Police="" Code_GE="" Code_Provision="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_189>
+
+
+[Filtre_Periode_190]
+Xml=<Filtre_Periode_190><Filtre Société="" Régime="" Catégorie="" Nom="" Convention="" Police="" Code_GE="" Code_Provision="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_190>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[Filtre_Periode_191]
+Xml=<Filtre_Periode_191><Filtre Société="" Régime="" Catégorie="" Nom="" Convention="" Police="" Code_GE="" Code_Provision="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_191>
+
+
+[Filtre_Periode_194]
+Xml=<Filtre_Periode_194><Filtre Société="" Régime="" Catégorie="" Nom="" Convention="" Police="" Code_GE="" Code_Provision="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_194>
+
+
+
+
+[Filtre_Periode_195]
+Xml=<Filtre_Periode_195><Filtre Société="" Régime="" Catégorie="" Nom="" Convention="" Police="" Code_GE="" Code_Provision="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_195>
+
+
+
+
+[Filtre_Periode_196]
+Xml=<Filtre_Periode_196><Filtre Société="" Régime="" Catégorie="" Nom="" Convention="" Police="" Code_GE="" Code_Provision="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_196>
+
+
+
+
+
+
+
+
+
+
+[Filtre_Periode_197]
+Xml=<Filtre_Periode_197><Filtre Société="" Régime="" Catégorie="" Nom="" Convention="" Police="" Code_GE="" Code_Provision="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_197>
+
+
+
+
+
+
+
+[Filtre_Periode_198]
+Xml=<Filtre_Periode_198><Filtre Société="" Régime="" Catégorie="" Nom="" Convention="" Police="" Code_GE="" Code_Provision="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_198>
+
+
+
+
+[Filtre_Periode_199]
+Xml=<Filtre_Periode_199><Filtre Société="" Régime="" Catégorie="" Nom="" Convention="" Police="" Code_GE="" Code_Provision="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_199>
+
+
+
+[Filtre_Periode_200]
+Xml=<Filtre_Periode_200><Filtre Société="" Régime="" Catégorie="" Nom="" Convention="" Police="" Code_GE="" Code_Provision="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_200>
+
+
+
+
+[Filtre_Periode_201]
+Xml=<Filtre_Periode_201><Filtre Société="" Régime="" Catégorie="" Nom="" Convention="" Police="" Code_GE="" Code_Provision="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_201>
+
+
+
+
+[Filtre_Periode_202]
+Xml=<Filtre_Periode_202><Filtre Société="" Régime="" Catégorie="" Nom="" Convention="" Police="" Code_GE="" Code_Provision="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_202>
+
+
+
+
+
+[Filtre_Periode_203]
+Xml=<Filtre_Periode_203><Filtre Société="" Régime="" Catégorie="" Nom="" Convention="" Police="" Code_GE="" Code_Provision="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_203>
+
+
+
+
+
+
+[Filtre_Periode_204]
+Xml=<Filtre_Periode_204><Filtre Société="" Régime="" Catégorie="" Nom="" Convention="" Police="" Code_GE="" Code_Provision="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_204>
+
+
+
+
+[Filtre_Periode_205]
+Xml=<Filtre_Periode_205><Filtre Société="" Régime="" Catégorie="" Nom="" Convention="" Police="" Code_GE="" Code_Provision="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_205>
+
+
+
+[Filtre_Periode_206]
+Xml=<Filtre_Periode_206><Filtre Société="" Régime="" Catégorie="" Nom="" Convention="" Police="" Code_GE="" Code_Provision="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_206>
+
+
+
+[Filtre_Periode_207]
+Xml=<Filtre_Periode_207><Filtre Société="" Régime="" Catégorie="" Nom="" Convention="" Police="" Code_GE="" Code_Provision="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_207>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[Filtre_Periode_208]
+Xml=<Filtre_Periode_208><Filtre Société="" Régime="" Catégorie="" Nom="" Convention="" Police="" Code_GE="" Code_Provision="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_208>
+
+
+
+[Filtre_Periode_209]
+Xml=<Filtre_Periode_209><Filtre Société="" Régime="" Catégorie="" Nom="" Convention="" Police="" Code_GE="" Code_Provision="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_209>
+
+
+[Filtre_Periode_210]
+Xml=<Filtre_Periode_210><Filtre Société="" Régime="" Catégorie="" Nom="" Convention="" Police="" Code_GE="" Code_Provision="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_210>
+
+
+[Filtre_Periode_211]
+Xml=<Filtre_Periode_211><Filtre Société="" Régime="" Catégorie="" Nom="" Convention="" Police="" Code_GE="" Code_Provision="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_211>
+
+
+
+
+[Filtre_Periode_212]
+Xml=<Filtre_Periode_212><Filtre Société="" Régime="" Catégorie="" Nom="" Convention="" Police="" Code_GE="" Code_Provision="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_212>
+
+[Filtre_Periode_213]
+Xml=<Filtre_Periode_213><Filtre Société="" Régime="" Catégorie="" Nom="" Convention="" Police="" Code_GE="" Code_Provision="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_213>
+
+[Filtre_Periode_214]
+Xml=<Filtre_Periode_214><Filtre Société="" Régime="" Catégorie="" Nom="" Convention="" Police="" Code_GE="" Code_Provision="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_214>
+
+[Filtre_Periode_215]
+Xml=<Filtre_Periode_215><Filtre Société="" Régime="" Catégorie="" Nom="" Convention="" Police="" Code_GE="" Code_Provision="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_215>
+
+[Filtre_Periode_216]
+Xml=<Filtre_Periode_216><Filtre Société="" Régime="" Catégorie="" Nom="" Convention="" Police="" Code_GE="" Code_Provision="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_216>
+
+
+[Filtre_Periode_217]
+Xml=<Filtre_Periode_217><Filtre Société="" Régime="" Catégorie="" Nom="" Convention="" Police="" Code_GE="" Code_Provision="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_217>
+
+
+[Filtre_Periode_218]
+Xml=<Filtre_Periode_218><Filtre Société="" Régime="" Catégorie="" Nom="" Convention="" Police="" Code_GE="" Code_Provision="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_218>
+
+[Filtre_Periode_219]
+Xml=<Filtre_Periode_219><Filtre Société="" Régime="" Catégorie="" Nom="" Convention="" Police="" Code_GE="" Code_Provision="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_219>
+
+[Filtre_Periode_220]
+Xml=<Filtre_Periode_220><Filtre Société="" Régime="" Catégorie="" Nom="" Convention="" Police="" Code_GE="" Code_Provision="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_220>
+
+[Filtre_Periode_221]
+Xml=<Filtre_Periode_221><Filtre Société="" Régime="" Catégorie="" Nom="" Convention="" Police="" Code_GE="" Code_Provision="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_221>
+
+[Filtre_Periode_222]
+Xml=<Filtre_Periode_222><Filtre Société="" Régime="" Catégorie="" Nom="" Convention="" Police="" Code_GE="" Code_Provision="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_222>
+
+
+[Filtre_Periode_223]
+Xml=<Filtre_Periode_223><Filtre Société="" Régime="" Catégorie="" Nom="" Convention="" Police="" Code_GE="" Code_Provision="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_223>
+
+[Filtre_Periode_224]
+Xml=<Filtre_Periode_224><Filtre Société="" Régime="" Catégorie="" Nom="" Convention="" Police="" Code_GE="" Code_Provision="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_224>
+
+[Filtre_Periode_225]
+Xml=<Filtre_Periode_225><Filtre Société="" Régime="" Catégorie="" Nom="" Convention="" Police="" Code_GE="" Code_Provision="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_225>
+
+[Filtre_Periode_226]
+Xml=<Filtre_Periode_226><Filtre Société="" Régime="" Catégorie="" Nom="" Convention="" Police="" Code_GE="" Code_Provision="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_226>
+
+[Filtre_Periode_227]
+Xml=<Filtre_Periode_227><Filtre Société="" Régime="" Catégorie="" Nom="" Convention="" Police="" Code_GE="" Code_Provision="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_227>
+
+
+
+[Filtre_Periode_228]
+Xml=<Filtre_Periode_228><Filtre Société="" Régime="" Catégorie="" Nom="" Convention="" Police="" Code_GE="" Code_Provision="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_228>
+
+
+
+[Filtre_Periode_229]
+Xml=<Filtre_Periode_229><Filtre Société="" Régime="" Catégorie="" Nom="" Convention="" Police="" Code_GE="" Code_Provision="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_229>
+
+
+
+
+[Filtre_Periode_231]
+Xml=<Filtre_Periode_231><Filtre Société="" Régime="" Catégorie="" Nom="" Convention="" Police="" Code_GE="" Code_Provision="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_231>
+
+
+
+
+
+
+[Filtre_Periode_230]
+Xml=<Filtre_Periode_230><Filtre Société="" Régime="" Catégorie="" Nom="" Convention="" Police="" Code_GE="" Code_Provision="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_230>
+
+[Filtre_Periode_243]
+Xml=<Filtre_Periode_243><Filtre Société="" Régime="" Catégorie="" Nom="" Convention="" Police="" Code_GE="" Code_Provision="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_243>
+
+
+
+
+
+
+
+
+
+
+
+[Filtre_Periode_242]
+Xml=<Filtre_Periode_242><Filtre Société="" Régime="" Catégorie="" Nom="" Convention="" Police="" Code_GE="" Code_Provision="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_242>
+
+
+
+
+[Filtre_Periode_241]
+Xml=<Filtre_Periode_241><Filtre Société="" Régime="" Catégorie="" Nom="" Convention="" Police="" Code_GE="" Code_Provision="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_241>
+
+
+[Filtre_Periode_240]
+Xml=<Filtre_Periode_240><Filtre Société="" Régime="" Catégorie="" Nom="" Convention="" Police="" Code_GE="" Code_Provision="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_240>
+
+
+[Filtre_Periode_239]
+Xml=<Filtre_Periode_239><Filtre Société="" Régime="" Catégorie="" Nom="" Convention="" Police="" Code_GE="" Code_Provision="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_239>
+
+[Filtre_Periode_238]
+Xml=<Filtre_Periode_238><Filtre Société="" Régime="" Catégorie="" Nom="" Convention="" Police="" Code_GE="" Code_Provision="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_238>
+
+[Filtre_Periode_244]
+Xml=<Filtre_Periode_244><Filtre Société="" Régime="" Catégorie="" Nom="" Convention="" Police="" Code_GE="" Code_Provision="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_244>
+
+
+
+
+
+
+[Filtre_Periode_245]
+Xml=<Filtre_Periode_245><Filtre Société="" Régime="" Catégorie="" Nom="" Convention="" Police="" Code_GE="" Code_Provision="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_245>
+
+
+
+
+
+
+
+[Filtre_Periode_246]
+Xml=<Filtre_Periode_246><Filtre Société="" Régime="" Catégorie="" Nom="" Convention="" Police="" Code_GE="" Code_Provision="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_246>
+
+
+
+[Filtre_Periode_247]
+Xml=<Filtre_Periode_247><Filtre Société="" Régime="" Catégorie="" Nom="" Convention="" Police="" Code_GE="" Code_Provision="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_247>
+
+
+
+[Filtre_Periode_248]
+Xml=<Filtre_Periode_248><Filtre Société="" Régime="" Catégorie="" Nom="" Convention="" Police="" Code_GE="" Code_Provision="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_248>
+
+
+
+[Filtre_Periode_249]
+Xml=<Filtre_Periode_249><Filtre Société="" Régime="" Catégorie="" Nom="" Convention="" Police="" Code_GE="" Code_Provision="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_249>
+
+
+
+
+[Filtre_Periode_250]
+Xml=<Filtre_Periode_250><Filtre Société="" Régime="" Catégorie="" Nom="" Convention="" Police="" Code_GE="" Code_Provision="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_250>
+
+
+
+[Filtre_Periode_251]
+Xml=<Filtre_Periode_251><Filtre Société="" Régime="" Catégorie="" Nom="" Convention="" Police="" Code_GE="" Code_Provision="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_251>
+
+
+
+[Filtre_Periode_252]
+Xml=<Filtre_Periode_252><Filtre Société="" Régime="" Catégorie="" Nom="" Convention="" Police="" Code_GE="" Code_Provision="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_252>
+
+
+
+[Filtre_Periode_253]
+Xml=<Filtre_Periode_253><Filtre Société="" Régime="" Catégorie="" Nom="" Convention="" Police="" Code_GE="" Code_Provision="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_253>
+
+
+
+
+[Filtre_Periode_254]
+Xml=<Filtre_Periode_254><Filtre Société="" Régime="" Catégorie="" Nom="" Convention="" Police="" Code_GE="" Code_Provision="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_254>
+
+
+
+[Filtre_Periode_255]
+Xml=<Filtre_Periode_255><Filtre Société="" Régime="" Catégorie="" Nom="" Convention="" Police="" Code_GE="" Code_Provision="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_255>
+
+
+
+[Filtre_Periode_256]
+Xml=<Filtre_Periode_256><Filtre Société="" Régime="" Catégorie="" Nom="" Convention="" Police="" Code_GE="" Code_Provision="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_256>
+
+
+
+
+
+
+
+[Filtre_Periode_257]
+Xml=<Filtre_Periode_257><Filtre Société="" Régime="" Catégorie="" Nom="" Convention="" Police="" Code_GE="" Code_Provision="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_257>
+
+
+[Filtre_Periode_258]
+Xml=<Filtre_Periode_258><Filtre Société="" Régime="" Catégorie="" Nom="" Convention="" Police="" Code_GE="" Code_Provision="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_258>
+
+
+[Filtre_Periode_259]
+Xml=<Filtre_Periode_259><Filtre Société="" Régime="" Catégorie="" Nom="" Convention="" Police="" Code_GE="" Code_Provision="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_259>
+
+[Filtre_Periode_260]
+Xml=<Filtre_Periode_260><Filtre Société="" Régime="" Catégorie="" Nom="" Convention="" Police="" Code_GE="" Code_Provision="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_260>
+
+[Filtre_Periode_261]
+Xml=<Filtre_Periode_261><Filtre Société="" Régime="" Catégorie="" Nom="" Convention="" Police="" Code_GE="" Code_Provision="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_261>
+
+[Filtre_Periode_262]
+Xml=<Filtre_Periode_262><Filtre Société="" Régime="" Catégorie="" Nom="" Convention="" Police="" Code_GE="" Code_Provision="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_262>
+
+
+
+
+
+
+[Filtre_Periode_263]
+Xml=<Filtre_Periode_263><Filtre Société="" Régime="" Catégorie="" Nom="" Convention="" Police="" Code_GE="" Code_Provision="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_263>
+
+
+
+[Filtre_Periode_264]
+Xml=<Filtre_Periode_264><Filtre Société="" Régime="" Catégorie="" Nom="" Convention="" Police="" Code_GE="" Code_Provision="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_264>
+
+[Filtre_Periode_266]
+Xml=<Filtre_Periode_266><Filtre Société="" Régime="" Catégorie="" Nom="" Convention="" Police="" Code_GE="" Code_Provision="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_266>
+
+
+
+[Filtre_Periode_265]
+Xml=<Filtre_Periode_265><Filtre Société="" Régime="" Catégorie="" Nom="" Convention="" Police="" Code_GE="" Code_Provision="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_265>
+
+
+[Filtre_Periode_267]
+Xml=<Filtre_Periode_267><Filtre Société="" Régime="" Catégorie="" Nom="" Convention="" Police="" Code_GE="" Code_Provision="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_267>
+
+
+
+
+
+
+
+
+
+[Filtre_Periode_268]
+Xml=<Filtre_Periode_268><Filtre Société="" Régime="" Catégorie="" Nom="" Convention="" Police="" Code_GE="" Code_Provision="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_268>
+
+
+
+
+
+
+
+
+
+
+[Filtre_Periode_269]
+Xml=<Filtre_Periode_269><Filtre Société="" Régime="" Catégorie="" Nom="" Convention="" Police="" Code_GE="" Code_Provision="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_269>
+
+
+
+
+[Filtre_Periode_270]
+Xml=<Filtre_Periode_270><Filtre Société="" Régime="" Catégorie="" Nom="" Convention="" Police="" Code_GE="" Code_Provision="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_270>
+
+
+
+
+
+
+[Filtre_Periode_274]
+Xml=<Filtre_Periode_274><Filtre Société="" Régime="" Catégorie="" Nom="" Convention="" Police="" Code_GE="" Code_Provision="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_274>
+
+
+
+[Filtre_Periode_275]
+Xml=<Filtre_Periode_275><Filtre Société="" Régime="" Catégorie="" Nom="" Convention="" Police="" Code_GE="" Code_Provision="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_275>
+
+
+
+[Filtre_Periode_272]
+Xml=<Filtre_Periode_272><Filtre Société="" Régime="" Catégorie="" Nom="" Convention="" Police="" Code_GE="" Code_Provision="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_272>
+
+
+
+
+
+
+
+
+
+
+
+
+
+[Filtre_Periode_273]
+Xml=<Filtre_Periode_273><Filtre Société="" Régime="" Catégorie="" Nom="" Convention="" Police="" Code_GE="" Code_Provision="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_273>
+
+
+
+
+
+
+[Filtre_Periode_271]
+Xml=<Filtre_Periode_271><Filtre Société="" Régime="" Catégorie="" Nom="" Convention="" Police="" Code_GE="" Code_Provision="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_271>
+
+
+
+
+
+
+[Filtre_Periode_276]
+Xml=<Filtre_Periode_276><Filtre Société="" Régime="" Catégorie="" Nom="" Convention="" Police="" Code_GE="" Code_Provision="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_276>
+
+[Filtre_Periode_277]
+Xml=<Filtre_Periode_277><Filtre Société="" Régime="" Catégorie="" Nom="" Convention="" Police="" Code_GE="" Code_Provision="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_277>
+
+[Filtre_Periode_278]
+Xml=<Filtre_Periode_278><Filtre Société="" Régime="" Catégorie="" Nom="" Convention="" Police="" Code_GE="" Code_Provision="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_278>
+
+
+[Filtre_Periode_279]
+Xml=<Filtre_Periode_279><Filtre Société="" Régime="" Catégorie="" Nom="" Convention="" Police="" Code_GE="" Code_Provision="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_279>
+
+
+
+[Filtre_Periode_280]
+Xml=<Filtre_Periode_280><Filtre Société="" Régime="" Catégorie="" Nom="" Convention="" Police="" Code_GE="" Code_Provision="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_280>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[Filtre_Periode_281]
+Xml=<Filtre_Periode_281><Filtre Société="" Régime="" Catégorie="" Nom="" Convention="" Police="" Code_GE="" Code_Provision="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_281>
+
+
+
+[Filtre_Periode_283]
+Xml=<Filtre_Periode_283><Filtre Société="" Régime="" Catégorie="" Nom="" Convention="" Police="" Code_GE="" Code_Provision="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_283>
+
+
+
+
+
+[Filtre_Periode_282]
+Xml=<Filtre_Periode_282><Filtre Société="" Régime="" Catégorie="" Nom="" Convention="" Police="" Code_GE="" Code_Provision="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_282>
+
+
+[Filtre_Periode_284]
+Xml=<Filtre_Periode_284><Filtre Société="" Régime="" Catégorie="" Nom="" Convention="" Police="" Code_GE="" Code_Provision="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_284>
+
+
+[Filtre_Periode_285]
+Xml=<Filtre_Periode_285><Filtre Société="" Régime="" Catégorie="" Nom="" Convention="" Police="" Code_GE="" Code_Provision="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_285>
+
+[Filtre_Periode_286]
+Xml=<Filtre_Periode_286><Filtre Société="" Régime="" Catégorie="" Nom="" Convention="" Police="" Code_GE="" Code_Provision="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_286>
+
+
+
+
+
+
+[Filtre_Periode_287]
+Xml=<Filtre_Periode_287><Filtre Société="" Régime="" Catégorie="" Nom="" Convention="" Police="" Code_GE="" Code_Provision="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_287>
+
+
+
+
+[Filtre_Periode_288]
+Xml=<Filtre_Periode_288><Filtre Société="" Régime="" Catégorie="" Nom="" Convention="" Police="" Code_GE="" Code_Provision="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_288>
+
+
+
+
+
+[Filtre_Periode_289]
+Xml=<Filtre_Periode_289><Filtre Société="" Régime="" Catégorie="" Nom="" Convention="" Police="" Code_GE="" Code_Provision="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_289>
+
+
+
+
+
+
+
+
+
+[Filtre_Periode_290]
+Xml=<Filtre_Periode_290><Filtre Société="" Régime="" Catégorie="" Nom="" Convention="" Police="" Code_GE="" Code_Provision="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_290>
+
+
+
+
+
+[Filtre_Periode_291]
+Xml=<Filtre_Periode_291><Filtre Société="" Régime="" Catégorie="" Nom="" Convention="" Police="" Code_GE="" Code_Provision="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_291>
+
+
+
+
+
+
+
+[Filtre_Periode_292]
+Xml=<Filtre_Periode_292><Filtre Société="" Régime="" Catégorie="" Nom="" Convention="" Police="" Code_GE="" Code_Provision="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_292>
+
+
+
+
+
+[Filtre_Periode_293]
+Xml=<Filtre_Periode_293><Filtre Société="" Régime="" Catégorie="" Nom="" Convention="" Police="" Code_GE="" Code_Provision="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_293>
+
+
+
+[Filtre_Periode_294]
+Xml=<Filtre_Periode_294><Filtre Société="" Régime="" Catégorie="" Nom="" Convention="" Police="" Code_GE="" Code_Provision="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_294>
+
+
+
+
+
+[Filtre_Periode_295]
+Xml=<Filtre_Periode_295><Filtre Société="" Régime="" Catégorie="" Nom="" Convention="" Police="" Code_GE="" Code_Provision="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_295>
+
+
+
+
+
+
+[Filtre_Periode_296]
+Xml=<Filtre_Periode_296><Filtre Société="" Régime="" Catégorie="" Nom="" Convention="" Police="" Code_GE="" Code_Provision="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_296>
+
+[Filtre_Periode_299]
+Xml=<Filtre_Periode_299><Filtre Société="" Régime="" Catégorie="" Nom="" Convention="" Police="" Code_GE="" Code_Provision="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_299>
+
+
+
+
+
+[Filtre_Periode_300]
+Xml=<Filtre_Periode_300><Filtre Société="" Régime="" Catégorie="" Nom="" Convention="" Police="" Code_GE="" Code_Provision="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_300>
+
+
+
+
+
+
+[Filtre_Periode_301]
+Xml=<Filtre_Periode_301><Filtre Société="" Régime="" Catégorie="" Nom="" Convention="" Police="" Code_GE="" Code_Provision="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_301>
+
+[Filtre_Periode_302]
+Xml=<Filtre_Periode_302><Filtre Société="" Régime="" Catégorie="" Nom="" Convention="" Police="" Code_GE="" Code_Provision="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_302>
+
+
+
+[Filtre_Periode_303]
+Xml=<Filtre_Periode_303><Filtre Société="" Régime="" Catégorie="" Nom="" Convention="" Police="" Code_GE="" Code_Provision="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_303>
+
+[Filtre_Periode_304]
+Xml=<Filtre_Periode_304><Filtre Société="" Régime="" Catégorie="" Nom="" Convention="" Police="" Code_GE="" Code_Provision="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_304>
+
+
+[Filtre_Periode_305]
+Xml=<Filtre_Periode_305><Filtre Société="" Régime="" Catégorie="" Nom="" Convention="" Police="" Code_GE="" Code_Provision="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_305>
+
+[Filtre_Periode_306]
+Xml=<Filtre_Periode_306><Filtre Société="" Régime="" Catégorie="" Nom="" Convention="" Police="" Code_GE="" Code_Provision="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_306>
+
+[Filtre_Periode_307]
+Xml=<Filtre_Periode_307><Filtre Société="" Régime="" Catégorie="" Nom="" Convention="" Police="" Code_GE="" Code_Provision="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_307>
+
+[Filtre_Periode_308]
+Xml=<Filtre_Periode_308><Filtre Société="" Régime="" Catégorie="" Nom="" Convention="" Police="" Code_GE="" Code_Provision="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_308>
+
+
+[Filtre_Periode_309]
+Xml=<Filtre_Periode_309><Filtre Société="" Régime="" Catégorie="" Nom="" Convention="" Police="" Code_GE="" Code_Provision="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_309>
+
+
+[Filtre_Periode_310]
+Xml=<Filtre_Periode_310><Filtre Société="" Régime="" Catégorie="" Nom="" Convention="" Police="" Code_GE="" Code_Provision="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_310>
+
+
+[Filtre_Periode_311]
+Xml=<Filtre_Periode_311><Filtre Société="" Régime="" Catégorie="" Nom="" Convention="" Police="" Code_GE="" Code_Provision="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_311>
+
+[Filtre_Periode_312]
+Xml=<Filtre_Periode_312><Filtre Société="" Régime="" Catégorie="" Nom="" Convention="" Police="" Code_GE="" Code_Provision="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_312>
+
+
+
+
+
+
+[Filtre_Periode_313]
+Xml=<Filtre_Periode_313><Filtre Société="" Régime="" Catégorie="" Nom="" Convention="" Police="" Code_GE="" Code_Provision="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_313>
+
+
+
+
+
+
+
+
+
+
+[Filtre_Periode_314]
+Xml=<Filtre_Periode_314><Filtre Société="" Régime="" Catégorie="" Nom="" Convention="" Police="" Code_GE="" Code_Provision="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_314>
+
+
+
+
+[Filtre_Periode_315]
+Xml=<Filtre_Periode_315><Filtre Société="" Régime="" Catégorie="" Nom="" Convention="" Police="" Code_GE="" Code_Provision="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_315>
+
+
+
+[Filtre_Periode_316]
+Xml=<Filtre_Periode_316><Filtre Société="" Régime="" Catégorie="" Nom="" Convention="" Police="" Code_GE="" Code_Provision="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_316>
+
+
+[Filtre_Periode_317]
+Xml=<Filtre_Periode_317><Filtre Société="" Régime="" Catégorie="" Nom="" Convention="" Police="" Code_GE="" Code_Provision="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_317>
+
+
+
+
+
+[Filtre_Periode_318]
+Xml=<Filtre_Periode_318><Filtre Société="" Régime="" Catégorie="" Nom="" Convention="" Police="" Code_GE="" Code_Provision="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_318>
+
+
+[Filtre_Periode_319]
+Xml=<Filtre_Periode_319><Filtre Société="" Régime="" Catégorie="" Nom="" Convention="" Police="" Code_GE="" Code_Provision="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_319>
+
+
+[Filtre_Periode_320]
+Xml=<Filtre_Periode_320><Filtre Société="" Régime="" Catégorie="" Nom="" Convention="" Police="" Code_GE="" Code_Provision="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_320>
+
+
+[Filtre_Periode_321]
+Xml=<Filtre_Periode_321><Filtre Société="" Régime="" Catégorie="" Nom="" Convention="" Police="" Code_GE="" Code_Provision="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_321>
+
+
+
+[Filtre_Periode_322]
+Xml=<Filtre_Periode_322><Filtre Société="" Régime="" Catégorie="" Nom="" Convention="" Police="" Code_GE="" Code_Provision="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_322>
+
+[Filtre_Periode_323]
+Xml=<Filtre_Periode_323><Filtre Société="" Régime="" Catégorie="" Nom="" Convention="" Police="" Code_GE="" Code_Provision="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_323>
+
+[Filtre_Periode_324]
+Xml=<Filtre_Periode_324><Filtre Société="" Régime="" Catégorie="" Nom="" Convention="" Police="" Code_GE="" Code_Provision="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_324>
+
+[Filtre_Periode_325]
+Xml=<Filtre_Periode_325><Filtre Société="" Régime="" Catégorie="" Nom="" Convention="" Police="" Code_GE="" Code_Provision="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_325>
+
+[Filtre_Periode_326]
+Xml=<Filtre_Periode_326><Filtre Société="" Régime="" Catégorie="" Nom="" Convention="" Police="" Code_GE="" Code_Provision="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_326>
+
+[Filtre_Periode_327]
+Xml=<Filtre_Periode_327><Filtre Société="" Régime="" Catégorie="" Nom="" Convention="" Police="" Code_GE="" Code_Provision="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_327>
+
+[Filtre_Periode_328]
+Xml=<Filtre_Periode_328><Filtre Société="" Régime="" Catégorie="" Nom="" Convention="" Police="" Code_GE="" Code_Provision="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_328>
+
+[Filtre_Periode_329]
+Xml=<Filtre_Periode_329><Filtre Société="" Régime="" Catégorie="" Nom="" Convention="" Police="" Code_GE="" Code_Provision="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_329>
+
+
+[Filtre_Periode_330]
+Xml=<Filtre_Periode_330><Filtre Société="" Régime="" Catégorie="" Nom="" Convention="" Police="" Code_GE="" Code_Provision="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_330>
+
+
+
+[Filtre_Periode_331]
+Xml=<Filtre_Periode_331><Filtre Société="" Régime="" Catégorie="" Nom="" Convention="" Police="" Code_GE="" Code_Provision="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_331>
+
+[Filtre_Periode_332]
+Xml=<Filtre_Periode_332><Filtre Société="" Régime="" Catégorie="" Nom="" Convention="" Police="" Code_GE="" Code_Provision="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_332>
+
+
+[Filtre_Periode_333]
+Xml=<Filtre_Periode_333><Filtre Société="" Régime="" Catégorie="" Nom="" Convention="" Police="" Code_GE="" Code_Provision="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_333>
+
+[Filtre_Periode_334]
+Xml=<Filtre_Periode_334><Filtre Société="" Régime="" Catégorie="" Nom="" Convention="" Police="" Code_GE="" Code_Provision="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_334>
+
+[Filtre_Periode_335]
+Xml=<Filtre_Periode_335><Filtre Société="" Régime="" Catégorie="" Nom="" Convention="" Police="" Code_GE="" Code_Provision="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_335>
+
+[Filtre_Periode_336]
+Xml=<Filtre_Periode_336><Filtre Société="" Régime="" Catégorie="" Nom="" Convention="" Police="" Code_GE="" Code_Provision="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_336>
+
+[Filtre_Periode_337]
+Xml=<Filtre_Periode_337><Filtre Société="" Régime="" Catégorie="" Nom="" Convention="" Police="" Code_GE="" Code_Provision="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_337>
+
+
+[Filtre_Periode_338]
+Xml=<Filtre_Periode_338><Filtre Société="" Régime="" Catégorie="" Nom="" Convention="" Police="" Code_GE="" Code_Provision="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_338>
+
+
+[Filtre_Periode_339]
+Xml=<Filtre_Periode_339><Filtre Société="" Régime="" Catégorie="" Nom="" Convention="" Police="" Code_GE="" Code_Provision="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_339>
+
+[Filtre_Periode_340]
+Xml=<Filtre_Periode_340><Filtre Société="" Régime="" Catégorie="" Nom="" Convention="" Police="" Code_GE="" Code_Provision="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_340>
+
+[Filtre_Periode_341]
+Xml=<Filtre_Periode_341><Filtre Société="" Régime="" Catégorie="" Nom="" Convention="" Police="" Code_GE="" Code_Provision="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_341>
+
+[Filtre_Periode_342]
+Xml=<Filtre_Periode_342><Filtre Société="" Régime="" Catégorie="" Nom="" Convention="" Police="" Code_GE="" Code_Provision="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_342>
+
+
+[Filtre_Periode_343]
+Xml=<Filtre_Periode_343><Filtre Société="" Régime="" Catégorie="" Nom="" Convention="" Police="" Code_GE="" Code_Provision="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_343>
+
+[Filtre_Periode_344]
+Xml=<Filtre_Periode_344><Filtre Société="" Régime="" Catégorie="" Nom="" Convention="" Police="" Code_GE="" Code_Provision="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_344>
+
+[Filtre_Periode_345]
+Xml=<Filtre_Periode_345><Filtre Société="" Régime="" Catégorie="" Nom="" Convention="" Police="" Code_GE="" Code_Provision="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_345>
+
+
+[Filtre_Periode_346]
+Xml=<Filtre_Periode_346><Filtre Société="" Régime="" Catégorie="" Nom="" Convention="" Police="" Code_GE="" Code_Provision="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_346>
+
+[Filtre_Periode_347]
+Xml=<Filtre_Periode_347><Filtre Société="" Régime="" Catégorie="" Nom="" Convention="" Police="" Code_GE="" Code_Provision="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_347>
+
+
+
+[Filtre_Periode_348]
+Xml=<Filtre_Periode_348><Filtre Société="" Régime="" Catégorie="" Nom="" Convention="" Police="" Code_GE="" Code_Provision="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_348>
+
+
+[Filtre_Periode_349]
+Xml=<Filtre_Periode_349><Filtre Société="" Régime="" Catégorie="" Nom="" Convention="" Police="" Code_GE="" Code_Provision="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_349>
+
+[Filtre_Periode_350]
+Xml=<Filtre_Periode_350><Filtre Société="" Régime="" Catégorie="" Nom="" Convention="" Police="" Code_GE="" Code_Provision="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_350>
+
+[Filtre_Periode_351]
+Xml=<Filtre_Periode_351><Filtre Société="" Régime="" Catégorie="" Nom="" Convention="" Police="" Code_GE="" Code_Provision="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_351>
+
+[Filtre_Periode_352]
+Xml=<Filtre_Periode_352><Filtre Société="" Régime="" Catégorie="" Nom="" Convention="" Police="" Code_GE="" Code_Provision="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_352>
+
+
+[Filtre_Periode_353]
+Xml=<Filtre_Periode_353><Filtre Société="" Régime="" Catégorie="" Nom="" Convention="" Police="" Code_GE="" Code_Provision="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_353>
+
+
+
+
+[Filtre_Periode_354]
+Xml=<Filtre_Periode_354><Filtre Société="" Régime="" Catégorie="" Nom="" Convention="" Police="" Code_GE="" Code_Provision="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_354>
+
+
+
+[Filtre_Periode_355]
+Xml=<Filtre_Periode_355><Filtre Société="" Régime="" Catégorie="" Nom="" Convention="" Police="" Code_GE="" Code_Provision="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_355>
+
+[Filtre_Periode_356]
+Xml=<Filtre_Periode_356><Filtre Société="" Régime="" Catégorie="" Nom="" Convention="" Police="" Code_GE="" Code_Provision="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_356>
+
+
+
+[Filtre_Periode_357]
+Xml=<Filtre_Periode_357><Filtre Société="" Régime="" Catégorie="" Nom="" Convention="" Police="" Code_GE="" Code_Provision="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_357>
+
+
+
+[Filtre_Periode_358]
+Xml=<Filtre_Periode_358><Filtre Société="" Régime="" Catégorie="" Nom="" Convention="" Police="" Code_GE="" Code_Provision="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_358>
+
+
+
+[Filtre_Periode_359]
+Xml=<Filtre_Periode_359><Filtre Société="" Régime="" Catégorie="" Nom="" Convention="" Police="" Code_GE="" Code_Provision="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_359>
+
+
+
+
+[Filtre_Periode_360]
+Xml=<Filtre_Periode_360><Filtre Société="" Régime="" Catégorie="" Nom="" Convention="" Police="" Code_GE="" Code_Provision="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_360>
+
+
+
+
+
+[Filtre_Periode_361]
+Xml=<Filtre_Periode_361><Filtre Société="" Régime="" Catégorie="" Nom="" Convention="" Police="" Code_GE="" Code_Provision="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_361>
+
+
+[Filtre_Periode_362]
+Xml=<Filtre_Periode_362><Filtre Société="" Régime="" Catégorie="" Nom="" Convention="" Police="" Code_GE="" Code_Provision="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_362>
+
+
+
+
+
+
+
+[Filtre_Periode_363]
+Xml=<Filtre_Periode_363><Filtre Société="" Régime="" Catégorie="" Nom="" Convention="" Police="" Code_GE="" Code_Provision="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_363>
+
+
+[Filtre_Periode_364]
+Xml=<Filtre_Periode_364><Filtre Société="" Régime="" Catégorie="" Nom="" Convention="" Police="" Code_GE="" Code_Provision="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_364>
+
+
+[Filtre_Periode_365]
+Xml=<Filtre_Periode_365><Filtre Société="" Régime="" Catégorie="" Nom="" Convention="" Police="" Code_GE="" Code_Provision="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_365>
+
+
+
+
+
+[Filtre_Periode_366]
+Xml=<Filtre_Periode_366><Filtre Société="" Régime="" Catégorie="" Nom="" Convention="" Police="" Code_GE="" Code_Provision="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_366>
+
+
+[Filtre_Periode_367]
+Xml=<Filtre_Periode_367><Filtre Société="" Régime="" Catégorie="" Nom="" Convention="" Police="" Code_GE="" Code_Provision="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_367>
+
+
+[Filtre_Periode_368]
+Xml=<Filtre_Periode_368><Filtre Société="" Régime="" Catégorie="" Nom="" Convention="" Police="" Code_GE="" Code_Provision="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_368>
+
+
+
+[Filtre_Periode_369]
+Xml=<Filtre_Periode_369><Filtre Société="" Régime="" Catégorie="" Nom="" Convention="" Police="" Code_GE="" Code_Provision="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_369>
+
+
+
+[Filtre_Periode_370]
+Xml=<Filtre_Periode_370><Filtre Société="" Régime="" Catégorie="" Nom="" Convention="" Police="" Code_GE="" Code_Provision="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_370>
+
+[Filtre_Periode_372]
+Xml=<Filtre_Periode_372><Filtre Société="" Régime="" Catégorie="" Nom="" Convention="" Police="" Code_GE="" Code_Provision="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_372>
+
+
+
+
+
+
+
+
+
+[Filtre_Periode_375]
+Xml=<Filtre_Periode_375><Filtre Société="" Régime="" Catégorie="" Nom="" Convention="" Police="" Code_GE="" Code_Provision="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_375>
+
+
+
+
+
+[Filtre_Periode_376]
+Xml=<Filtre_Periode_376><Filtre Société="" Régime="" Catégorie="" Nom="" Convention="" Police="" Code_GE="" Code_Provision="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_376>
+
+
+
+
+
+
+[Filtre_Periode_377]
+Xml=<Filtre_Periode_377><Filtre Société="" Régime="" Catégorie="" Nom="" Convention="" Police="" Code_GE="" Code_Provision="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_377>
+
+
+
+
+
+[Filtre_Periode_373]
+Xml=<Filtre_Periode_373><Filtre Société="" Régime="" Catégorie="" Nom="" Convention="" Police="" Code_GE="" Code_Provision="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_373>
+
+
+
+
+[Filtre_Periode_374]
+Xml=<Filtre_Periode_374><Filtre Société="" Régime="" Catégorie="" Nom="" Convention="" Police="" Code_GE="" Code_Provision="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_374>
+
+
+
+[Filtre_Periode_378]
+Xml=<Filtre_Periode_378><Filtre Société="" Régime="" Catégorie="" Nom="" Convention="" Police="" Code_GE="" Code_Provision="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_378>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[Filtre_Periode_379]
+Xml=<Filtre_Periode_379><Filtre Société="" Régime="" Catégorie="" Nom="" Convention="" Police="" Code_GE="" Code_Provision="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_379>
+
+
+
+
+
+
+
+
+
+
+[Filtre_Periode_380]
+Xml=<Filtre_Periode_380><Filtre Société="" Régime="" Catégorie="" Nom="" Convention="" Police="" Code_GE="" Code_Provision="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_380>
+
+
+
+
+[Filtre_Periode_381]
+Xml=<Filtre_Periode_381><Filtre Société="" Régime="" Catégorie="" Nom="" Convention="" Police="" Code_GE="" Code_Provision="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_381>
+
+
+
+
+
+
+
+
+[Filtre_Periode_382]
+Xml=<Filtre_Periode_382><Filtre Société="" Régime="" Catégorie="" Nom="" Convention="" Police="" Code_GE="" Code_Provision="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_382>
+
+
+
+
+
+
+
+[Filtre_Periode_383]
+Xml=<Filtre_Periode_383><Filtre Société="" Régime="" Catégorie="" Nom="" Convention="" Police="" Code_GE="" Code_Provision="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_383>
+
+
+
+
+
+[Filtre_Periode_384]
+Xml=<Filtre_Periode_384><Filtre Société="" Régime="" Catégorie="" Nom="" Convention="" Police="" Code_GE="" Code_Provision="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_384>
+
+
+
+
+
+
+
+[Filtre_Periode_2]
+Xml=<Filtre_Periode_2><Filtre Société="" Régime="" Catégorie="" Nom="" Contrat="" Police="" Code_GE="" Code_Provision="" Code_Position="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_2>
+
+
+[Filtre_Periode_3]
+Xml=<Filtre_Periode_3><Filtre Société="" Régime="" Catégorie="" Nom="" Contrat="" Police="" Code_GE="" Code_Provision="" Code_Position="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_3>
+
+[Filtre_Periode_4]
+Xml=<Filtre_Periode_4><Filtre Société="" Régime="" Catégorie="" Nom="" Contrat="" Police="" Code_GE="" Code_Provision="" Code_Position="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_4>
+
+
+
+
+
+
+
+
+
+
+
+[Filtre_Periode_5]
+Xml=<Filtre_Periode_5><Filtre Société="" Régime="" Catégorie="" Nom="" Contrat="" Police="" Code_GE="" Code_Provision="" Code_Position="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_5>
+
+
+
+
+
+
+[Filtre_Periode_1]
+Xml=<Filtre_Periode_1><Filtre Société="" Régime="" Catégorie="" Nom="" Contrat="" Police="" Code_GE="" Code_Provision="" Code_Position="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_1>
+
+[Filtre_Periode_6]
+Xml=<Filtre_Periode_6><Filtre Société="" Régime="" Catégorie="" Nom="" Contrat="" Police="" Code_GE="" Code_Provision="" Code_Position="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_6>
+
+
+
+
+[Filtre_Periode_7]
+Xml=<Filtre_Periode_7><Filtre Société="" Régime="" Catégorie="" Nom="" Contrat="" Police="" Code_GE="" Code_Provision="" Code_Position="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_7>
+
+
+
+
+
+[Filtre_Periode_8]
+Xml=<Filtre_Periode_8><Filtre Société="" Régime="" Catégorie="" Nom="" Contrat="" Police="" Code_GE="" Code_Provision="" Code_Position="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_8>
+
+
+
+
+
+
+
+[Filtre_Periode_9]
+Xml=<Filtre_Periode_9><Filtre Société="" Régime="" Catégorie="" Nom="" Contrat="" Police="" Code_GE="" Code_Provision="" Code_Position="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_9>
+
+
+
+[Filtre_Periode_10]
+Xml=<Filtre_Periode_10><Filtre Société="" Régime="" Catégorie="" Nom="" Contrat="" Police="" Code_GE="" Code_Provision="" Code_Position="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_10>
+
+
+[Filtre_Periode_11]
+Xml=<Filtre_Periode_11><Filtre Société="" Régime="" Catégorie="" Nom="" Contrat="" Police="" Code_GE="" Code_Provision="" Code_Position="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_11>
+
+
+
+
+
+
+[Filtre_Periode_12]
+Xml=<Filtre_Periode_12><Filtre Société="" Régime="" Catégorie="" Nom="" Contrat="" Police="" Code_GE="" Code_Provision="" Code_Position="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_12>
+
+
+[Filtre_Periode_13]
+Xml=<Filtre_Periode_13><Filtre Société="" Régime="" Catégorie="" Nom="" Contrat="" Police="" Code_GE="" Code_Provision="" Code_Position="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_13>
+
+[Filtre_Periode_14]
+Xml=<Filtre_Periode_14><Filtre Société="" Régime="" Catégorie="" Nom="" Contrat="" Police="" Code_GE="" Code_Provision="" Code_Position="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_14>
+
+
+
+
+
+
+[Filtre_Periode_15]
+Xml=<Filtre_Periode_15><Filtre Société="" Régime="" Catégorie="" Nom="" Contrat="" Police="" Code_GE="" Code_Provision="" Code_Position="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_15>
+
+[Filtre_Periode_16]
+Xml=<Filtre_Periode_16><Filtre Société="" Régime="" Catégorie="" Nom="" Contrat="" Police="" Code_GE="" Code_Provision="" Code_Position="" RegroupAnnexe="" RegroupStat="" CCN="" NUENRP3I=""/></Filtre_Periode_16>
+
+
+
+
+
+
+
+
+
+
+
+
+[Filtre_Periode_17]
+Xml=<Filtre_Periode_17><Filtre Société="" Régime="" Catégorie="" Nom="" Contrat="" Police="" Code_GE="" Code_Provision="" Code_Position="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_17>
+
+
+
+
+
+
+[Filtre_Periode_18]
+Xml=<Filtre_Periode_18><Filtre Société="" Régime="" Catégorie="" Nom="" Contrat="" Police="" Code_GE="" Code_Provision="" Code_Position="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_18>
+
+
+
+[Filtre_Periode_19]
+Xml=<Filtre_Periode_19><Filtre Société="" Régime="" Catégorie="" Nom="" Contrat="" Police="" Code_GE="" Code_Provision="" Code_Position="" RegroupAnnexe="" RegroupStat="" CCN="" NUENRP3I=""/></Filtre_Periode_19>
+
+[Filtre_Periode_20]
+Xml=<Filtre_Periode_20><Filtre Société="" Régime="" Catégorie="" Nom="" Contrat="" Police="" Code_GE="" Code_Provision="" Code_Position="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_20>
+
+[Filtre_Periode_21]
+Xml=<Filtre_Periode_21><Filtre Société="" Régime="" Catégorie="" Nom="" Contrat="" Police="" Code_GE="" Code_Provision="" Code_Position="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_21>
+
+
+[Filtre_Periode_22]
+Xml=<Filtre_Periode_22><Filtre Société="" Régime="" Catégorie="" Nom="" Contrat="" Police="" Code_GE="" Code_Provision="" Code_Position="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_22>
+
+
+
+
+[Filtre_Periode_23]
+Xml=<Filtre_Periode_23><Filtre Société="" Régime="" Catégorie="" Nom="" Contrat="" Police="" Code_GE="" Code_Provision="" Code_Position="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_23>
+
+
+[Filtre_Periode_24]
+Xml=<Filtre_Periode_24><Filtre Société="" Régime="" Catégorie="" Nom="" Contrat="" Police="" Code_GE="" Code_Provision="" Code_Position="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_24>
+
+
+[Filtre_Periode_25]
+Xml=<Filtre_Periode_25><Filtre Société="" Régime="" Catégorie="" Nom="" Contrat="" Police="" Code_GE="" Code_Provision="" Code_Position="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_25>
+
+
+[Filtre_Periode_26]
+Xml=<Filtre_Periode_26><Filtre Société="" Régime="" Catégorie="" Nom="" Contrat="" Police="" Code_GE="" Code_Provision="" Code_Position="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_26>
+
+[Filtre_Periode_27]
+Xml=<Filtre_Periode_27><Filtre Société="" Régime="" Catégorie="" Nom="" Contrat="" Police="" Code_GE="" Code_Provision="" Code_Position="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_27>
+
+[Filtre_Periode_28]
+Xml=<Filtre_Periode_28><Filtre Société="" Régime="" Catégorie="" Nom="" Contrat="" Police="" Code_GE="" Code_Provision="" Code_Position="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_28>
+
+[Filtre_Periode_29]
+Xml=<Filtre_Periode_29><Filtre Société="" Régime="" Catégorie="" Nom="" Contrat="" Police="" Code_GE="" Code_Provision="" Code_Position="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_29>
+
+
+
+[Filtre_Periode_30]
+Xml=<Filtre_Periode_30><Filtre Société="" Régime="" Catégorie="" Nom="" Contrat="" Police="" Code_GE="" Code_Provision="" Code_Position="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_30>
+
+
+
+
+
+
+
+[Filtre_Periode_31]
+Xml=<Filtre_Periode_31><Filtre Société="" Régime="" Catégorie="" Nom="" Contrat="" Police="" Code_GE="" Code_Provision="" Code_Position="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_31>
+
+
+[Filtre_Periode_32]
+Xml=<Filtre_Periode_32><Filtre Société="" Régime="" Catégorie="" Nom="" Contrat="" Police="" Code_GE="" Code_Provision="" Code_Position="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_32>
+
+[Filtre_Periode_34]
+Xml=<Filtre_Periode_34><Filtre Société="" Régime="" Catégorie="" Nom="" Contrat="" Police="" Code_GE="" Code_Provision="" Code_Position="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_34>
+
+
+[Filtre_Periode_33]
+Xml=<Filtre_Periode_33><Filtre Société="" Régime="" Catégorie="" Nom="" Contrat="" Police="" Code_GE="" Code_Provision="" Code_Position="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_33>
+
+[Filtre_Periode_35]
+Xml=<Filtre_Periode_35><Filtre Société="" Régime="" Catégorie="" Nom="" Contrat="" Police="" Code_GE="" Code_Provision="" Code_Position="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_35>
+
+[Filtre_Periode_36]
+Xml=<Filtre_Periode_36><Filtre Société="" Régime="" Catégorie="" Nom="" Contrat="" Police="" Code_GE="" Code_Provision="" Code_Position="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_36>
+
+[Filtre_Periode_37]
+Xml=<Filtre_Periode_37><Filtre Société="" Régime="" Catégorie="" Nom="" Contrat="" Police="" Code_GE="" Code_Provision="" Code_Position="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_37>
+
+
+[Filtre_Periode_39]
+Xml=<Filtre_Periode_39><Filtre Société="" Régime="" Catégorie="" Nom="" Contrat="" Police="" Code_GE="" Code_Provision="" Code_Position="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_39>
+
+[Filtre_Periode_38]
+Xml=<Filtre_Periode_38><Filtre Société="" Régime="" Catégorie="" Nom="" Contrat="" Police="" Code_GE="" Code_Provision="" Code_Position="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_38>
+
+[Filtre_Periode_40]
+Xml=<Filtre_Periode_40><Filtre Société="" Régime="" Catégorie="" Nom="" Contrat="" Police="" Code_GE="" Code_Provision="" Code_Position="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_40>
+
+[Filtre_Periode_41]
+Xml=<Filtre_Periode_41><Filtre Société="" Régime="" Catégorie="" Nom="" Contrat="" Police="" Code_GE="" Code_Provision="" Code_Position="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_41>
+
+[Filtre_Periode_42]
+Xml=<Filtre_Periode_42><Filtre Société="" Régime="" Catégorie="" Nom="" Contrat="" Police="" Code_GE="" Code_Provision="" Code_Position="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_42>
+
+[Filtre_Periode_43]
+Xml=<Filtre_Periode_43><Filtre Société="" Régime="" Catégorie="" Nom="" Contrat="" Police="" Code_GE="" Code_Provision="" Code_Position="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_43>
+
+[Filtre_Periode_44]
+Xml=<Filtre_Periode_44><Filtre Société="" Régime="" Catégorie="" Nom="" Contrat="" Police="" Code_GE="" Code_Provision="" Code_Position="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_44>
+
+[Filtre_Periode_45]
+Xml=<Filtre_Periode_45><Filtre Société="" Régime="" Catégorie="" Nom="" Contrat="" Police="" Code_GE="" Code_Provision="" Code_Position="" RegroupAnnexe="" RegroupStat="" CCN="" NUENRP3I=""/></Filtre_Periode_45>
+
+
+[Filtre_Periode_47]
+Xml=<Filtre_Periode_47><Filtre Société="" Régime="" Catégorie="" Nom="" Contrat="" Police="" Code_GE="" Code_Provision="" Code_Position="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_47>
+
+
+
+
+
+
+
+[Filtre_Periode_48]
+Xml=<Filtre_Periode_48><Filtre Société="" Régime="" Catégorie="" Nom="" Contrat="" Police="" Code_GE="" Code_Provision="" Code_Position="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_48>
+
+
+
+[Filtre_Periode_49]
+Xml=<Filtre_Periode_49><Filtre Société="" Régime="" Catégorie="" Nom="" Contrat="" Police="" Code_GE="" Code_Provision="" Code_Position="" RegroupAnnexe="" RegroupStat="" CCN="" NUENRP3I=""/></Filtre_Periode_49>
+
+
+
+
+
+[Filtre_Periode_50]
+Xml=<Filtre_Periode_50><Filtre Société="" Régime="" Catégorie="" Nom="" Contrat="" Police="" Code_GE="" Code_Provision="" Code_Position="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_50>
+
+[Filtre_Periode_52]
+Xml=<Filtre_Periode_52><Filtre Société="" Régime="" Catégorie="" Nom="" Contrat="" Police="" Code_GE="" Code_Provision="" Code_Position="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_52>
+
+
+[Filtre_Periode_53]
+Xml=<Filtre_Periode_53><Filtre Société="" Régime="" Catégorie="" Nom="" Contrat="" Police="" Code_GE="" Code_Provision="" Code_Position="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_53>
+
+[Filtre_Periode_54]
+Xml=<Filtre_Periode_54><Filtre Société="" Régime="" Catégorie="" Nom="" Contrat="" Police="" Code_GE="" Code_Provision="" Code_Position="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_54>
+
+[Filtre_Periode_55]
+Xml=<Filtre_Periode_55><Filtre Société="" Régime="" Catégorie="" Nom="" Contrat="" Police="" Code_GE="" Code_Provision="" Code_Position="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_55>
+
+[Filtre_Periode_51]
+Xml=<Filtre_Periode_51><Filtre Société="" Régime="" Catégorie="" Nom="" Contrat="" Police="" Code_GE="" Code_Provision="" Code_Position="" RegroupAnnexe="" RegroupStat="" CCN="" NUENRP3I=""/></Filtre_Periode_51>
+
+
+[Filtre_Periode_56]
+Xml=<Filtre_Periode_56><Filtre Société="" Régime="" Catégorie="" Nom="" Contrat="" Police="" Code_GE="" Code_Provision="" Code_Position="" RegroupAnnexe="" RegroupStat="" CCN="" NUENRP3I=""/></Filtre_Periode_56>
+
+
+
+[Filtre_Periode_57]
+Xml=<Filtre_Periode_57><Filtre Société="" Régime="" Catégorie="" Nom="" Contrat="" Police="" Code_GE="" Code_Provision="" Code_Position="" RegroupAnnexe="" RegroupStat="" CCN="" NUENRP3I=""/></Filtre_Periode_57>
+
+
+
+
+
+
+
+
+
+
+
+[Filtre_Periode_58]
+Xml=<Filtre_Periode_58><Filtre Société="" Régime="" Catégorie="" Nom="" Contrat="" Police="" Code_GE="" Code_Provision="" Code_Position="" RegroupAnnexe="" RegroupStat="" CCN="" NUENRP3I=""/></Filtre_Periode_58>
+
+
+[Filtre_Periode_59]
+Xml=<Filtre_Periode_59><Filtre Société="" Régime="" Catégorie="" Nom="" Contrat="" Police="" Code_GE="" Code_Provision="" Code_Position="" RegroupAnnexe="" RegroupStat="" CCN="" NUENRP3I=""/></Filtre_Periode_59>
+
+[Filtre_Periode_60]
+Xml=<Filtre_Periode_60><Filtre Société="" Régime="" Catégorie="" Nom="" Contrat="" Police="" Code_GE="" Code_Provision="" Code_Position="" RegroupAnnexe="" RegroupStat="" CCN="" NUENRP3I=""/></Filtre_Periode_60>
+
+[Filtre_Periode_61]
+Xml=<Filtre_Periode_61><Filtre Société="" Régime="" Catégorie="" Nom="" Contrat="" Police="" Code_GE="" Code_Provision="" Code_Position="" RegroupAnnexe="" RegroupStat="" CCN="" NUENRP3I=""/></Filtre_Periode_61>
+
+[Filtre_Periode_62]
+Xml=<Filtre_Periode_62><Filtre Société="" Régime="" Catégorie="" Nom="" Contrat="" Police="" Code_GE="" Code_Provision="" Code_Position="" RegroupAnnexe="" RegroupStat="" CCN="" NUENRP3I=""/></Filtre_Periode_62>
+
+
+[Filtre_Periode_63]
+Xml=<Filtre_Periode_63><Filtre Société="" Régime="" Catégorie="" Nom="" Contrat="" Police="" Code_GE="" Code_Provision="" Code_Position="" RegroupAnnexe="" RegroupStat="" CCN="" NUENRP3I=""/></Filtre_Periode_63>
+
+[Filtre_Periode_64]
+Xml=<Filtre_Periode_64><Filtre Société="" Régime="" Catégorie="" Nom="" Contrat="" Police="" Code_GE="" Code_Provision="" Code_Position="" RegroupAnnexe="" RegroupStat="" CCN="" NUENRP3I=""/></Filtre_Periode_64>
+
+[Filtre_Periode_66]
+Xml=<Filtre_Periode_66><Filtre Société="" Régime="" Catégorie="" Nom="" Contrat="" Police="" Code_GE="" Code_Provision="" Code_Position="" RegroupAnnexe="" RegroupStat="" CCN="" NUENRP3I=""/></Filtre_Periode_66>
+
+
+
+[Filtre_Periode_67]
+Xml=<Filtre_Periode_67><Filtre Société="" Régime="" Catégorie="" Nom="" Contrat="" Police="" Code_GE="" Code_Provision="" Code_Position="" RegroupAnnexe="" RegroupStat="" CCN="" NUENRP3I=""/></Filtre_Periode_67>
+
+[Filtre_Periode_65]
+Xml=<Filtre_Periode_65><Filtre Société="" Régime="" Catégorie="" Nom="" Contrat="" Police="" Code_GE="" Code_Provision="" Code_Position="" RegroupAnnexe="" RegroupStat="" CCN="" NUENRP3I=""/></Filtre_Periode_65>
+
+[Filtre_Periode_68]
+Xml=<Filtre_Periode_68><Filtre Société="" Régime="" Catégorie="" Nom="" Contrat="" Police="" Code_GE="" Code_Provision="" Code_Position="" RegroupAnnexe="" RegroupStat="" CCN="" NUENRP3I=""/></Filtre_Periode_68>
+
+
+[Filtre_Periode_69]
+Xml=<Filtre_Periode_69><Filtre Société="" Régime="" Catégorie="" Nom="" Contrat="" Police="" Code_GE="" Code_Provision="" Code_Position="" RegroupAnnexe="" RegroupStat="" CCN="" NUENRP3I=""/></Filtre_Periode_69>
+
+
+[Filtre_Periode_70]
+Xml=<Filtre_Periode_70><Filtre Société="" Régime="" Catégorie="" Nom="" Contrat="" Police="" Code_GE="" Code_Provision="" Code_Position="" RegroupAnnexe="" RegroupStat="" CCN="" NUENRP3I=""/></Filtre_Periode_70>
+
+
+
+
+
+
+[Filtre_Periode_71]
+Xml=<Filtre_Periode_71><Filtre Société="" Régime="" Catégorie="" Nom="" Contrat="" Police="" Code_GE="" Code_Provision="" Code_Position="" RegroupAnnexe="" RegroupStat="" CCN="" NUENRP3I=""/></Filtre_Periode_71>
+
+[Filtre_Periode_72]
+Xml=<Filtre_Periode_72><Filtre Société="" Régime="" Catégorie="" Nom="" Contrat="" Police="" Code_GE="" Code_Provision="" Code_Position="" RegroupAnnexe="" RegroupStat="" CCN="" NUENRP3I=""/></Filtre_Periode_72>
+
+
+
+
+[Filtre_Periode_73]
+Xml=<Filtre_Periode_73><Filtre Société="" Régime="" Catégorie="" Nom="" Contrat="" Police="" Code_GE="" Code_Provision="" Code_Position="" RegroupAnnexe="" RegroupStat="" CCN="" NUENRP3I=""/></Filtre_Periode_73>
+
+
+
+
+
+[Filtre_Periode_74]
+Xml=<Filtre_Periode_74><Filtre Société="" Régime="" Catégorie="" Nom="" Contrat="" Police="" Code_GE="" Code_Provision="" Code_Position="" RegroupAnnexe="" RegroupStat="" CCN="" NUENRP3I=""/></Filtre_Periode_74>
+
+
+
+
+
+
+
+
+[Filtre_Periode_75]
+Xml=<Filtre_Periode_75><Filtre Société="" Régime="" Catégorie="" Nom="" Contrat="" Police="" Code_GE="" Code_Provision="" Code_Position="" RegroupAnnexe="" RegroupStat="" CCN="" NUENRP3I=""/></Filtre_Periode_75>
+
+
+
+
+
+
+
+
+
+
+
+
+
+[Filtre_Periode_76]
+Xml=<Filtre_Periode_76><Filtre Société="" Régime="" Catégorie="" Nom="" Contrat="" Police="" Code_GE="" Code_Provision="" Code_Position="" RegroupAnnexe="" RegroupStat="" CCN="" NUENRP3I=""/></Filtre_Periode_76>
+
+
+
+
+
+
+[Filtre_Periode_77]
+Xml=<Filtre_Periode_77><Filtre Société="" Régime="" Catégorie="" Nom="" Contrat="" Police="" Code_GE="" Code_Provision="" Code_Position="" RegroupAnnexe="" RegroupStat="" CCN="" NUENRP3I=""/></Filtre_Periode_77>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[Filtre_Periode_78]
+Xml=<Filtre_Periode_78><Filtre Société="" Régime="" Catégorie="" Nom="" Contrat="" Police="" Code_GE="" Code_Provision="" Code_Position="" RegroupAnnexe="" RegroupStat="" CCN="" NUENRP3I=""/></Filtre_Periode_78>
+
+
+
+
+
+
+[Filtre_Periode_79]
+Xml=<Filtre_Periode_79><Filtre Société="" Régime="" Catégorie="" Nom="" Contrat="" Police="" Code_GE="" Code_Provision="" Code_Position="" RegroupAnnexe="" RegroupStat="" CCN="" NUENRP3I=""/></Filtre_Periode_79>
+
+[Filtre_Periode_80]
+Xml=<Filtre_Periode_80><Filtre Société="" Régime="" Catégorie="" Nom="" Contrat="" Police="" Code_GE="" Code_Provision="" Code_Position="" RegroupAnnexe="" RegroupStat="" CCN="" NUENRP3I=""/></Filtre_Periode_80>
+
+
+[Filtre_Periode_81]
+Xml=<Filtre_Periode_81><Filtre Société="" Régime="" Catégorie="" Nom="" Contrat="" Police="" Code_GE="" Code_Provision="" Code_Position="" RegroupAnnexe="" RegroupStat="" CCN="" NUENRP3I=""/></Filtre_Periode_81>
+
+[Filtre_Periode_82]
+Xml=<Filtre_Periode_82><Filtre Société="" Régime="" Catégorie="" Nom="" Contrat="" Police="" Code_GE="" Code_Provision="" Code_Position="" RegroupAnnexe="" RegroupStat="" CCN="" NUENRP3I=""/></Filtre_Periode_82>
+
+
+[Filtre_Periode_83]
+Xml=<Filtre_Periode_83><Filtre Société="" Régime="" Catégorie="" Nom="" Contrat="" Police="" Code_GE="" Code_Provision="" Code_Position="" RegroupAnnexe="" RegroupStat="" CCN=""/></Filtre_Periode_83>
+
+
+
+
+[Filtre_Periode_84]
+Xml=<Filtre_Periode_84><Filtre Société="" Régime="" Catégorie="" Nom="" Contrat="" Police="" Code_GE="" Code_Provision="" Code_Position="" RegroupAnnexe="" RegroupStat="" CCN="" NUENRP3I=""/></Filtre_Periode_84>
+
+
+
+
+
+
+
+
+
+[Filtre_Periode_85]
+Xml=<Filtre_Periode_85><Filtre Société="" Régime="" Catégorie="" Nom="" Contrat="" Police="" Code_GE="" Code_Provision="" Code_Position="" RegroupAnnexe="" RegroupStat="" CCN="" NUENRP3I=""/></Filtre_Periode_85>
+
+
+
+
+
+
+[Filtre_Periode_90]
+Xml=<Filtre_Periode_90><Filtre Société="" Régime="" Catégorie="" Nom="" Contrat="" Police="" Code_GE="" Code_Provision="" Code_Position="" RegroupAnnexe="" RegroupStat="" CCN="" NUENRP3I=""/></Filtre_Periode_90>
+
+
+[Filtre_Periode_92]
+Xml=<Filtre_Periode_92><Filtre Société="" Régime="" Catégorie="" Nom="" Contrat="" Police="" Code_GE="" Code_Provision="" Code_Position="" RegroupAnnexe="" RegroupStat="" CCN="" NUENRP3I=""/></Filtre_Periode_92>
+
+
+[Filtre_Periode_93]
+Xml=<Filtre_Periode_93><Filtre Société="" Régime="" Catégorie="" Nom="" Contrat="" Police="" Code_GE="" Code_Provision="" Code_Position="" RegroupAnnexe="" RegroupStat="" CCN="" NUENRP3I=""/></Filtre_Periode_93>
+
+
+[Filtre_Periode_94]
+Xml=<Filtre_Periode_94><Filtre Société="" Régime="" Catégorie="" Nom="" Contrat="" Police="" Code_GE="" Code_Provision="" Code_Position="" RegroupAnnexe="" RegroupStat="" CCN="" NUENRP3I=""/></Filtre_Periode_94>
+
+
+
+[Filtre_Periode_96]
+Xml=<Filtre_Periode_96><Filtre Société="" Régime="" Catégorie="" Nom="" Contrat="" Police="" Code_GE="" Code_Provision="" Code_Position="" RegroupAnnexe="" RegroupStat="" CCN="" NUENRP3I=""/></Filtre_Periode_96>
+
+
+[Filtre_Periode_95]
+Xml=<Filtre_Periode_95><Filtre Société="" Régime="" Catégorie="" Nom="" Contrat="" Police="" Code_GE="" Code_Provision="" Code_Position="" RegroupAnnexe="" RegroupStat="" CCN="" NUENRP3I=""/></Filtre_Periode_95>
+
+[Filtre_Periode_97]
+Xml=<Filtre_Periode_97><Filtre Société="" Régime="" Catégorie="" Nom="" Contrat="" Police="" Code_GE="" Code_Provision="" Code_Position="" RegroupAnnexe="" RegroupStat="" CCN="" NUENRP3I=""/></Filtre_Periode_97>
+
+
+
+
+
+
+
+[Filtre_Periode_98]
+Xml=<Filtre_Periode_98><Filtre Société="" Régime="" Catégorie="" Nom="" Contrat="" Police="" Code_GE="" Code_Provision="" Code_Position="" RegroupAnnexe="" RegroupStat="" CCN="" NUENRP3I=""/></Filtre_Periode_98>
+
+
+
+
+
+[Filtre_Periode_101]
+Xml=<Filtre_Periode_101><Filtre Société="" Régime="" Catégorie="" Nom="" Contrat="" Police="" Code_GE="" Code_Provision="" Code_Position="" RegroupAnnexe="" RegroupStat="" CCN="" NUENRP3I=""/></Filtre_Periode_101>
+
+[Filtre_Periode_102]
+Xml=<Filtre_Periode_102><Filtre Société="" Régime="" Catégorie="" Nom="" Contrat="" Police="" Code_GE="" Code_Provision="" Code_Position="" RegroupAnnexe="" RegroupStat="" CCN="" NUENRP3I=""/></Filtre_Periode_102>
+
+[Filtre_Periode_103]
+Xml=<Filtre_Periode_103><Filtre Société="" Régime="" Catégorie="" Nom="" Contrat="" Police="" Code_GE="" Code_Provision="" Code_Position="" RegroupAnnexe="" RegroupStat="" CCN="" NUENRP3I=""/></Filtre_Periode_103>
+
+
+
+
+
+[Filtre_Periode_99]
+Xml=<Filtre_Periode_99><Filtre Société="" Régime="" Catégorie="" Nom="" Contrat="" Police="" Code_GE="" Code_Provision="" Code_Position="" RegroupAnnexe="" RegroupStat="" CCN="" NUENRP3I=""/></Filtre_Periode_99>
+
+[Filtre_Periode_100]
+Xml=<Filtre_Periode_100><Filtre Société="" Régime="" Catégorie="" Nom="" Contrat="" Police="" Code_GE="" Code_Provision="" Code_Position="" RegroupAnnexe="" RegroupStat="" CCN="" NUENRP3I=""/></Filtre_Periode_100>
+
+[Filtre_Periode_105]
+Xml=<Filtre_Periode_105><Filtre Société="" Régime="" Catégorie="" Nom="" Contrat="" Police="" Code_GE="" Code_Provision="" Code_Position="" RegroupAnnexe="" RegroupStat="" CCN="" NUENRP3I=""/></Filtre_Periode_105>
+
+[Filtre_Periode_106]
+Xml=<Filtre_Periode_106><Filtre Société="" Régime="" Catégorie="" Nom="" Contrat="" Police="" Code_GE="" Code_Provision="" Code_Position="" RegroupAnnexe="" RegroupStat="" CCN="" NUENRP3I=""/></Filtre_Periode_106>
+
+
+[Filtre_Periode_107]
+Xml=<Filtre_Periode_107><Filtre Société="" Régime="" Catégorie="" Nom="" Contrat="" Police="" Code_GE="" Code_Provision="" Code_Position="" RegroupAnnexe="" RegroupStat="" CCN="" NUENRP3I=""/></Filtre_Periode_107>
+
+
+[Filtre_Periode_108]
+Xml=<Filtre_Periode_108><Filtre Société="" Régime="" Catégorie="" Nom="" Contrat="" Police="" Code_GE="" Code_Provision="" Code_Position="" RegroupAnnexe="" RegroupStat="" CCN="" NUENRP3I=""/></Filtre_Periode_108>
+
+[Filtre_Periode_110]
+Xml=<Filtre_Periode_110><Filtre Société="" Régime="" Catégorie="" Nom="" Contrat="" Police="" Code_GE="" Code_Provision="" Code_Position="" RegroupAnnexe="" RegroupStat="" CCN="" NUENRP3I=""/></Filtre_Periode_110>
+
+[Filtre_Periode_109]
+Xml=<Filtre_Periode_109><Filtre Société="" Régime="" Catégorie="" Nom="" Contrat="" Police="" Code_GE="" Code_Provision="" Code_Position="" RegroupAnnexe="" RegroupStat="" CCN="" NUENRP3I=""/></Filtre_Periode_109>
+
+[Filtre_Periode_111]
+Xml=<Filtre_Periode_111><Filtre Société="" Régime="" Catégorie="" Nom="" Contrat="" Police="" Code_GE="" Code_Provision="" Code_Position="" RegroupAnnexe="" RegroupStat="" CCN="" NUENRP3I=""/></Filtre_Periode_111>
+
+[Filtre_Periode_112]
+Xml=<Filtre_Periode_112><Filtre Société="" Régime="" Catégorie="" Nom="" Contrat="" Police="" Code_GE="" Code_Provision="" Code_Position="" RegroupAnnexe="" RegroupStat="" CCN="" NUENRP3I=""/></Filtre_Periode_112>
+
+
+
+
+
+[Filtre_Periode_113]
+Xml=<Filtre_Periode_113><Filtre Société="" Régime="" Catégorie="" Nom="" Contrat="" Police="" Code_GE="" Code_Provision="" Code_Position="" RegroupAnnexe="" RegroupStat="" CCN="" NUENRP3I=""/></Filtre_Periode_113>
+
+
+
+
+[Filtre_Periode_114]
+Xml=<Filtre_Periode_114><Filtre Société="" Régime="" Catégorie="" Nom="" Contrat="" Police="" Code_GE="" Code_Provision="" Code_Position="" RegroupAnnexe="" RegroupStat="" CCN="" NUENRP3I=""/></Filtre_Periode_114>
+
+
+
+[Filtre_Periode_115]
+Xml=<Filtre_Periode_115><Filtre Société="" Régime="" Catégorie="" Nom="" Contrat="" Police="" Code_GE="" Code_Provision="" Code_Position="" RegroupAnnexe="" RegroupStat="" CCN="" NUENRP3I=""/></Filtre_Periode_115>
+
+[Filtre_Periode_117]
+Xml=<Filtre_Periode_117><Filtre Société="" Régime="" Catégorie="" Nom="" Contrat="" Police="" Code_GE="" Code_Provision="" Code_Position="" RegroupAnnexe="" RegroupStat="" CCN="" NUENRP3I=""/></Filtre_Periode_117>
+
+
+
+
+
+
+
+
+
+
+[Filtre_Periode_118]
+Xml=<Filtre_Periode_118><Filtre Société="" Régime="" Catégorie="" Nom="" Contrat="" Police="" Code_GE="" Code_Provision="" Code_Position="" RegroupAnnexe="" RegroupStat="" CCN="" NUENRP3I=""/></Filtre_Periode_118>
+
+
+
+
+
+[Filtre_Periode_119]
+Xml=<Filtre_Periode_119><Filtre Société="" Régime="" Catégorie="" Nom="" Contrat="" Police="" Code_GE="" Code_Provision="" Code_Position="" RegroupAnnexe="" RegroupStat="" CCN="" NUENRP3I=""/></Filtre_Periode_119>
+
+
+
+
+[Filtre_Periode_120]
+Xml=<Filtre_Periode_120><Filtre Société="" Régime="" Catégorie="" Nom="" Contrat="" Police="" Code_GE="" Code_Provision="" Code_Position="" RegroupAnnexe="" RegroupStat="" CCN="" NUENRP3I=""/></Filtre_Periode_120>
+
+
+
+
+
+
+
+
+
+[Filtre_Periode_121]
+Xml=<Filtre_Periode_121><Filtre Société="" Régime="" Catégorie="" Nom="" Contrat="" Police="" Code_GE="" Code_Provision="" Code_Position="" RegroupAnnexe="" RegroupStat="" CCN="" NUENRP3I=""/></Filtre_Periode_121>
+
+
+[Filtre_Periode_122]
+Xml=<Filtre_Periode_122><Filtre Société="" Régime="" Catégorie="" Nom="" Contrat="" Police="" Code_GE="" Code_Provision="" Code_Position="" RegroupAnnexe="" RegroupStat="" CCN="" NUENRP3I=""/></Filtre_Periode_122>
+
+[Filtre_Periode_123]
+Xml=<Filtre_Periode_123><Filtre Société="" Régime="" Catégorie="" Nom="" Contrat="" Police="" Code_GE="" Code_Provision="" Code_Position="" RegroupAnnexe="" RegroupStat="" CCN="" NUENRP3I=""/></Filtre_Periode_123>
+
+
+
+[Filtre_Periode_124]
+Xml=<Filtre_Periode_124><Filtre Société="" Régime="" Catégorie="" Nom="" Contrat="" Police="" Code_GE="" Code_Provision="" Code_Position="" RegroupAnnexe="" RegroupStat="" CCN="" NUENRP3I=""/></Filtre_Periode_124>
+
+
+
+[Filtre_Periode_126]
+Xml=<Filtre_Periode_126><Filtre Société="" Régime="" Catégorie="" Nom="" Contrat="" Police="" Code_GE="" Code_Provision="" Code_Position="" RegroupAnnexe="" RegroupStat="" CCN="" NUENRP3I=""/></Filtre_Periode_126>
+
+
+[Filtre_Periode_127]
+Xml=<Filtre_Periode_127><Filtre Société="" Régime="" Catégorie="" Nom="" Contrat="" Police="" Code_GE="" Code_Provision="" Code_Position="" RegroupAnnexe="" RegroupStat="" CCN="" NUENRP3I=""/></Filtre_Periode_127>
+
+
+[Filtre_Periode_129]
+Xml=<Filtre_Periode_129><Filtre Société="" Régime="" Catégorie="" Nom="" Contrat="" Police="" Code_GE="" Code_Provision="" Code_Position="" RegroupAnnexe="" RegroupStat="" CCN="" NUENRP3I=""/></Filtre_Periode_129>
+
+
+[Filtre_Periode_131]
+Xml=<Filtre_Periode_131><Filtre Société="" Régime="" Catégorie="" Nom="" Contrat="" Police="" Code_GE="" Code_Provision="" Code_Position="" RegroupAnnexe="" RegroupStat="" CCN="" NUENRP3I=""/></Filtre_Periode_131>
+
+
+
+
+
+
+
+
+[Filtre_Periode_128]
+Xml=<Filtre_Periode_128><Filtre Société="" Régime="" Catégorie="" Nom="" Contrat="" Police="" Code_GE="" Code_Provision="" Code_Position="" RegroupAnnexe="" RegroupStat="" CCN="" NUENRP3I=""/></Filtre_Periode_128>
+
+[Filtre_Periode_130]
+Xml=<Filtre_Periode_130><Filtre Société="" Régime="" Catégorie="" Nom="" Contrat="" Police="" Code_GE="" Code_Provision="" Code_Position="" RegroupAnnexe="" RegroupStat="" CCN="" NUENRP3I=""/></Filtre_Periode_130>
+
+
+[Filtre_Periode_132]
+Xml=<Filtre_Periode_132><Filtre Société="" Régime="" Catégorie="" Nom="" Contrat="" Police="" Code_GE="" Code_Provision="" Code_Position="" RegroupAnnexe="" RegroupStat="" CCN="" NUENRP3I=""/></Filtre_Periode_132>
+
+
+
+
+
+
+[Filtre_Periode_133]
+Xml=<Filtre_Periode_133><Filtre Société="" Régime="" Catégorie="" Nom="" Contrat="" Police="" Code_GE="" Code_Provision="" Code_Position="" RegroupAnnexe="" RegroupStat="" CCN="" NUENRP3I=""/></Filtre_Periode_133>
+
+
+
+[Filtre_Periode_134]
+Xml=<Filtre_Periode_134><Filtre Société="" Régime="" Catégorie="" Nom="" Contrat="" Police="" Code_GE="" Code_Provision="" Code_Position="" RegroupAnnexe="" RegroupStat="" CCN="" NUENRP3I=""/></Filtre_Periode_134>
+
+
+[Filtre_Periode_135]
+Xml=<Filtre_Periode_135><Filtre Société="" Régime="" Catégorie="" Nom="" Contrat="" Police="" Code_GE="" Code_Provision="" Code_Position="" RegroupAnnexe="" RegroupStat="" CCN="" NUENRP3I=""/></Filtre_Periode_135>
+
+[Filtre_Periode_136]
+Xml=<Filtre_Periode_136><Filtre Société="" Régime="" Catégorie="" Nom="" Contrat="" Police="" Code_GE="" Code_Provision="" Code_Position="" RegroupAnnexe="" RegroupStat="" CCN="" NUENRP3I=""/></Filtre_Periode_136>
+
+[Filtre_Periode_137]
+Xml=<Filtre_Periode_137><Filtre Société="" Régime="" Catégorie="" Nom="" Contrat="" Police="" Code_GE="" Code_Provision="" Code_Position="" RegroupAnnexe="" RegroupStat="" CCN="" NUENRP3I=""/></Filtre_Periode_137>
+
+[Filtre_Periode_138]
+Xml=<Filtre_Periode_138><Filtre Société="" Régime="" Catégorie="" Nom="" Contrat="" Police="" Code_GE="" Code_Provision="" Code_Position="" RegroupAnnexe="" RegroupStat="" CCN="" NUENRP3I=""/></Filtre_Periode_138>
+
+[Filtre_Periode_139]
+Xml=<Filtre_Periode_139><Filtre Société="" Régime="" Catégorie="" Nom="" Contrat="" Police="" Code_GE="" Code_Provision="" Code_Position="" RegroupAnnexe="" RegroupStat="" CCN="" NUENRP3I=""/></Filtre_Periode_139>
+
+[Filtre_Periode_140]
+Xml=<Filtre_Periode_140><Filtre Société="" Régime="" Catégorie="" Nom="" Contrat="" Police="" Code_GE="" Code_Provision="" Code_Position="" RegroupAnnexe="" RegroupStat="" CCN="" NUENRP3I=""/></Filtre_Periode_140>
+
+[Filtre_Periode_141]
+Xml=<Filtre_Periode_141><Filtre Société="" Régime="" Catégorie="" Nom="" Contrat="" Police="" Code_GE="" Code_Provision="" Code_Position="" RegroupAnnexe="" RegroupStat="" CCN="" NUENRP3I=""/></Filtre_Periode_141>
+
+[Filtre_Periode_142]
+Xml=<Filtre_Periode_142><Filtre Société="" Régime="" Catégorie="" Nom="" Contrat="" Police="" Code_GE="" Code_Provision="" Code_Position="" RegroupAnnexe="" RegroupStat="" CCN="" NUENRP3I=""/></Filtre_Periode_142>
+
+[Filtre_Periode_143]
+Xml=<Filtre_Periode_143><Filtre Société="" Régime="" Catégorie="" Nom="" Contrat="" Police="" Code_GE="" Code_Provision="" Code_Position="" RegroupAnnexe="" RegroupStat="" CCN="" NUENRP3I=""/></Filtre_Periode_143>
+
+[Filtre_Periode_144]
+Xml=<Filtre_Periode_144><Filtre Société="" Régime="" Catégorie="" Nom="" Contrat="" Police="" Code_GE="" Code_Provision="" Code_Position="" RegroupAnnexe="" RegroupStat="" CCN="" NUENRP3I=""/></Filtre_Periode_144>
+
+
+[Filtre_Periode_145]
+Xml=<Filtre_Periode_145><Filtre Société="" Régime="" Catégorie="" Nom="" Contrat="" Police="" Code_GE="" Code_Provision="" Code_Position="" RegroupAnnexe="" RegroupStat="" CCN="" NUENRP3I=""/></Filtre_Periode_145>
+
+[Filtre_Periode_146]
+Xml=<Filtre_Periode_146><Filtre Société="" Régime="" Catégorie="" Nom="" Contrat="" Police="" Code_GE="" Code_Provision="" Code_Position="" RegroupAnnexe="" RegroupStat="" CCN="" NUENRP3I=""/></Filtre_Periode_146>
+
+[Filtre_Periode_147]
+Xml=<Filtre_Periode_147><Filtre Société="" Régime="" Catégorie="" Nom="" Contrat="" Police="" Code_GE="" Code_Provision="" Code_Position="" RegroupAnnexe="" RegroupStat="" CCN="" NUENRP3I=""/></Filtre_Periode_147>
+
+[Filtre_Periode_148]
+Xml=<Filtre_Periode_148><Filtre Société="" Régime="" Catégorie="" Nom="" Contrat="" Police="" Code_GE="" Code_Provision="" Code_Position="" RegroupAnnexe="" RegroupStat="" CCN="" NUENRP3I=""/></Filtre_Periode_148>
+
+[Filtre_Periode_149]
+Xml=<Filtre_Periode_149><Filtre Société="" Régime="" Catégorie="" Nom="" Contrat="" Police="" Code_GE="" Code_Provision="" Code_Position="" RegroupAnnexe="" RegroupStat="" CCN="" NUENRP3I=""/></Filtre_Periode_149>
+
+[Filtre_Periode_150]
+Xml=<Filtre_Periode_150><Filtre Société="" Régime="" Catégorie="" Nom="" Contrat="" Police="" Code_GE="" Code_Provision="" Code_Position="" RegroupAnnexe="" RegroupStat="" CCN="" NUENRP3I=""/></Filtre_Periode_150>
+
+
+
+[Filtre_Periode_151]
+Xml=<Filtre_Periode_151><Filtre Société="" Régime="" Catégorie="" Nom="" Contrat="" Police="" Code_GE="" Code_Provision="" Code_Position="" RegroupAnnexe="" RegroupStat="" CCN="" NUENRP3I=""/></Filtre_Periode_151>
+
+[Filtre_Periode_152]
+Xml=<Filtre_Periode_152><Filtre Société="" Régime="" Catégorie="" Nom="" Contrat="" Police="" Code_GE="" Code_Provision="" Code_Position="" RegroupAnnexe="" RegroupStat="" CCN="" NUENRP3I=""/></Filtre_Periode_152>
+
+
+[Filtre_Periode_153]
+Xml=<Filtre_Periode_153><Filtre Société="" Régime="" Catégorie="" Nom="" Contrat="" Police="" Code_GE="" Code_Provision="" Code_Position="" RegroupAnnexe="" RegroupStat="" CCN="" NUENRP3I=""/></Filtre_Periode_153>
+
+[Filtre_Periode_154]
+Xml=<Filtre_Periode_154><Filtre Société="" Régime="" Catégorie="" Nom="" Contrat="" Police="" Code_GE="" Code_Provision="" Code_Position="" RegroupAnnexe="" RegroupStat="" CCN="" NUENRP3I=""/></Filtre_Periode_154>
+
+
+
+
+
+[Filtre_Periode_155]
+Xml=<Filtre_Periode_155><Filtre Société="" Régime="" Catégorie="" Nom="" Contrat="" Police="" Code_GE="" Code_Provision="" Code_Position="" RegroupAnnexe="" RegroupStat="" CCN="" NUENRP3I=""/></Filtre_Periode_155>
+
+
+
+
+[Filtre_Periode_156]
+Xml=<Filtre_Periode_156><Filtre Société="" Régime="" Catégorie="" Nom="" Contrat="" Police="" Code_GE="" Code_Provision="" Code_Position="" RegroupAnnexe="" RegroupStat="" CCN="" NUENRP3I=""/></Filtre_Periode_156>
+
+
+[Filtre_Periode_157]
+Xml=<Filtre_Periode_157><Filtre Société="" Régime="" Catégorie="" Nom="" Contrat="" Police="" Code_GE="" Code_Provision="" Code_Position="" RegroupAnnexe="" RegroupStat="" CCN="" NUENRP3I=""/></Filtre_Periode_157>
+
+[Filtre_Periode_158]
+Xml=<Filtre_Periode_158><Filtre Société="" Régime="" Catégorie="" Nom="" Contrat="" Police="" Code_GE="" Code_Provision="" Code_Position="" RegroupAnnexe="" RegroupStat="" CCN="" NUENRP3I=""/></Filtre_Periode_158>
+
+[Filtre_Periode_159]
+Xml=<Filtre_Periode_159><Filtre Société="" Régime="" Catégorie="" Nom="" Contrat="" Police="" Code_GE="" Code_Provision="" Code_Position="" RegroupAnnexe="" RegroupStat="" CCN="" NUENRP3I=""/></Filtre_Periode_159>
+
+
+
+[Filtre_Periode_160]
+Xml=<Filtre_Periode_160><Filtre Société="" Régime="" Catégorie="" Nom="" Contrat="" Police="" Code_GE="" Code_Provision="" Code_Position="" RegroupAnnexe="" RegroupStat="" CCN="" NUENRP3I=""/></Filtre_Periode_160>
+
+[Filtre_Periode_161]
+Xml=<Filtre_Periode_161><Filtre Société="" Régime="" Catégorie="" Nom="" Contrat="" Police="" Code_GE="" Code_Provision="" Code_Position="" RegroupAnnexe="" RegroupStat="" CCN="" NUENRP3I=""/></Filtre_Periode_161>
+
+[Filtre_Periode_162]
+Xml=<Filtre_Periode_162><Filtre Société="" Régime="" Catégorie="" Nom="" Contrat="" Police="" Code_GE="" Code_Provision="" Code_Position="" RegroupAnnexe="" RegroupStat="" CCN="" NUENRP3I=""/></Filtre_Periode_162>
+
+
+
+
+
+[Filtre_Periode_163]
+Xml=<Filtre_Periode_163><Filtre Société="" Régime="" Catégorie="" Nom="" Contrat="" Police="" Code_GE="" Code_Provision="" Code_Position="" RegroupAnnexe="" RegroupStat="" CCN="" NUENRP3I=""/></Filtre_Periode_163>
+
+[Filtre_Periode_164]
+Xml=<Filtre_Periode_164><Filtre Société="" Régime="" Catégorie="" Nom="" Contrat="" Police="" Code_GE="" Code_Provision="" Code_Position="" RegroupAnnexe="" RegroupStat="" CCN="" NUENRP3I=""/></Filtre_Periode_164>
+
+
+[Filtre_Periode_165]
+Xml=<Filtre_Periode_165><Filtre Société="" Régime="" Catégorie="" Nom="" Contrat="" Police="" Code_GE="" Code_Provision="" Code_Position="" RegroupAnnexe="" RegroupStat="" CCN="" NUENRP3I=""/></Filtre_Periode_165>
+
+
+
+
+
+
+
+
+[Filtre_Periode_166]
+Xml=<Filtre_Periode_166><Filtre Société="" Régime="" Catégorie="" Nom="" Contrat="" Police="" Code_GE="" Code_Provision="" Code_Position="" RegroupAnnexe="" RegroupStat="" CCN="" NUENRP3I=""/></Filtre_Periode_166>
+
+
+
+
+[Filtre_Periode_167]
+Xml=<Filtre_Periode_167><Filtre Société="" Régime="" Catégorie="" Nom="" Contrat="" Police="" Code_GE="" Code_Provision="" Code_Position="" RegroupAnnexe="" RegroupStat="" CCN="" NUENRP3I=""/></Filtre_Periode_167>
+
+
+
+
+
+[Filtre_Periode_169]
+Xml=<Filtre_Periode_169><Filtre Société="" Régime="" Catégorie="" Nom="" Contrat="" Police="" Code_GE="" Code_Provision="" Code_Position="" RegroupAnnexe="" RegroupStat="" CCN="" NUENRP3I=""/></Filtre_Periode_169>
+
+
+
+
+
+[Filtre_Periode_170]
+Xml=<Filtre_Periode_170><Filtre Société="" Régime="" Catégorie="" Nom="" Contrat="" Police="" Code_GE="" Code_Provision="" Code_Position="" RegroupAnnexe="" RegroupStat="" CCN="" NUENRP3I=""/></Filtre_Periode_170>
+
+[Filtre_Periode_171]
+Xml=<Filtre_Periode_171><Filtre Société="" Régime="" Catégorie="" Nom="" Contrat="" Police="" Code_GE="" Code_Provision="" Code_Position="" RegroupAnnexe="" RegroupStat="" CCN="" NUENRP3I=""/></Filtre_Periode_171>
+
+
+
+[Filtre_Periode_172]
+Xml=<Filtre_Periode_172><Filtre Société="" Régime="" Catégorie="" Nom="" Contrat="" Police="" Code_GE="" Code_Provision="" Code_Position="" RegroupAnnexe="" RegroupStat="" CCN="" NUENRP3I=""/></Filtre_Periode_172>
+
+
+
+
+
